@@ -1,0 +1,105 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+            <!-- Back Button -->
+            <div class="mb-4">
+                <a href="#" class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-left me-2"></i>Back to Profile
+                </a>
+            </div>
+
+            <form>
+                <!-- Profile Header -->
+                <div class="account-section p-4 mb-4 text-center">
+                    <div class="image-upload mb-3">
+                        <img src="/api/placeholder/150/150" alt="Profile Picture" class="profile-image">
+                        <label for="profile-image" class="upload-icon">
+                            <i class="bi bi-camera-fill"></i>
+                        </label>
+                        <input type="file" id="profile-image" accept="image/*">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control form-control-lg text-center" value="Jane Smith">
+                    </div>
+                    <p class="text-muted mb-3">Premium Member</p>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Personal Information -->
+                    <div class="col-12 col-md-6">
+                        <div class="account-section p-4">
+                            <h3 class="mb-4">
+                                <i class="bi bi-person-circle me-2"></i>Personal Information
+                            </h3>
+                            <div class="mb-4">
+                                <div class="mb-3">
+                                    <label class="form-label info-label">Email Address</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            <i class="bi bi-envelope"></i>
+                                        </span>
+                                        <input type="email" class="form-control" value="jane.smith@example.com">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label info-label">Phone Number</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            <i class="bi bi-telephone"></i>
+                                        </span>
+                                        <input type="tel" class="form-control" value="+1 (555) 123-4567">
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label info-label">Address</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            <i class="bi bi-geo-alt"></i>
+                                        </span>
+                                        <input type="text" class="form-control"
+                                            value="123 Main Street, Anytown, ST 12345">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Account Details -->
+                    <div class="col-12 col-md-6">
+                        <div class="account-section p-4">
+                            <h3 class="mb-4">
+                                <i class="bi bi-shield-check me-2"></i>Account Details
+                            </h3>
+                            <div class="mb-4">
+                                <div class="mb-3">
+                                    <label class="form-label info-label">Account Type</label>
+                                    <select class="form-select">
+                                        <option>Basic</option>
+                                        <option selected>Premium</option>
+                                        <option>Enterprise</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label info-label">Member Since</label>
+                                    <input type="text" class="form-control" value="March 15, 2023" disabled>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label info-label">Last Login</label>
+                                    <input type="text" class="form-control" value="Today at 9:30 AM" disabled>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="d-flex justify-content-end gap-2 mt-4">
+                    <button type="button" class="btn btn-outline-secondary">Cancel</button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-check-lg me-2"></i>Save Changes
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
