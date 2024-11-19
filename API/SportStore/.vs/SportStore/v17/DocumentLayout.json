@@ -1,12 +1,199 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\Mock Project\\API\\SportStore\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\mock project\\api\\sportstore\\sportstore.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|solutionrelative:sportstore.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\mock project\\api\\sportstore\\sportstore.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|solutionrelative:sportstore.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\mock project\\api\\sportstore\\sportstore.webapi\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|solutionrelative:sportstore.webapi\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\mock project\\api\\sportstore\\sportstore.webapi\\controllers\\admin\\adminusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|solutionrelative:sportstore.webapi\\controllers\\admin\\adminusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\mock project\\api\\sportstore\\sportstore.webapi\\viewmodels\\sendemailvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|solutionrelative:sportstore.webapi\\viewmodels\\sendemailvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\mock project\\api\\sportstore\\sportstore.webapi\\viewmodels\\roleassignmentvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|solutionrelative:sportstore.webapi\\viewmodels\\roleassignmentvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\mock project\\api\\sportstore\\sportstore.webapi\\viewmodels\\resetpasswordvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|solutionrelative:sportstore.webapi\\viewmodels\\resetpasswordvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\mock project\\api\\sportstore\\sportstore.webapi\\viewmodels\\registervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|solutionrelative:sportstore.webapi\\viewmodels\\registervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\mock project\\api\\sportstore\\sportstore.webapi\\viewmodels\\loginvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|solutionrelative:sportstore.webapi\\viewmodels\\loginvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\mock project\\api\\sportstore\\sportstore.webapi\\viewmodels\\forgotpasswordvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|solutionrelative:sportstore.webapi\\viewmodels\\forgotpasswordvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\mock project\\api\\sportstore\\sportstore.webapi\\viewmodels\\authresultvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|solutionrelative:sportstore.webapi\\viewmodels\\authresultvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 240,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\Mock Project\\API\\SportStore\\SportStore.WebApi\\appsettings.json",
+              "RelativeDocumentMoniker": "SportStore.WebApi\\appsettings.json",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\Mock Project\\API\\SportStore\\SportStore.WebApi\\appsettings.json",
+              "RelativeToolTip": "SportStore.WebApi\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-19T03:32:04.13Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\Mock Project\\API\\SportStore\\SportStore.WebApi\\Program.cs",
+              "RelativeDocumentMoniker": "SportStore.WebApi\\Program.cs",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\Mock Project\\API\\SportStore\\SportStore.WebApi\\Program.cs",
+              "RelativeToolTip": "SportStore.WebApi\\Program.cs",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAAAMQAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T02:53:44.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AuthenticationController.cs",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\Mock Project\\API\\SportStore\\SportStore.WebApi\\Controllers\\AuthenticationController.cs",
+              "RelativeDocumentMoniker": "SportStore.WebApi\\Controllers\\AuthenticationController.cs",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\Mock Project\\API\\SportStore\\SportStore.WebApi\\Controllers\\AuthenticationController.cs",
+              "RelativeToolTip": "SportStore.WebApi\\Controllers\\AuthenticationController.cs",
+              "ViewState": "AgIAAJIAAAAAAAAAAAAAAKEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T02:34:41.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AdminUserController.cs",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\Mock Project\\API\\SportStore\\SportStore.WebApi\\Controllers\\Admin\\AdminUserController.cs",
+              "RelativeDocumentMoniker": "SportStore.WebApi\\Controllers\\Admin\\AdminUserController.cs",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\Mock Project\\API\\SportStore\\SportStore.WebApi\\Controllers\\Admin\\AdminUserController.cs",
+              "RelativeToolTip": "SportStore.WebApi\\Controllers\\Admin\\AdminUserController.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAqwHEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T02:34:37.879Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SendEmailVm.cs",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\Mock Project\\API\\SportStore\\SportStore.WebApi\\ViewModels\\SendEmailVm.cs",
+              "RelativeDocumentMoniker": "SportStore.WebApi\\ViewModels\\SendEmailVm.cs",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\Mock Project\\API\\SportStore\\SportStore.WebApi\\ViewModels\\SendEmailVm.cs",
+              "RelativeToolTip": "SportStore.WebApi\\ViewModels\\SendEmailVm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T02:34:28.31Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RoleAssignmentVm.cs",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\Mock Project\\API\\SportStore\\SportStore.WebApi\\ViewModels\\RoleAssignmentVm.cs",
+              "RelativeDocumentMoniker": "SportStore.WebApi\\ViewModels\\RoleAssignmentVm.cs",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\Mock Project\\API\\SportStore\\SportStore.WebApi\\ViewModels\\RoleAssignmentVm.cs",
+              "RelativeToolTip": "SportStore.WebApi\\ViewModels\\RoleAssignmentVm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T02:34:20.952Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ResetPasswordVm.cs",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\Mock Project\\API\\SportStore\\SportStore.WebApi\\ViewModels\\ResetPasswordVm.cs",
+              "RelativeDocumentMoniker": "SportStore.WebApi\\ViewModels\\ResetPasswordVm.cs",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\Mock Project\\API\\SportStore\\SportStore.WebApi\\ViewModels\\ResetPasswordVm.cs",
+              "RelativeToolTip": "SportStore.WebApi\\ViewModels\\ResetPasswordVm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T02:34:14.062Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RegisterVm.cs",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\Mock Project\\API\\SportStore\\SportStore.WebApi\\ViewModels\\RegisterVm.cs",
+              "RelativeDocumentMoniker": "SportStore.WebApi\\ViewModels\\RegisterVm.cs",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\Mock Project\\API\\SportStore\\SportStore.WebApi\\ViewModels\\RegisterVm.cs",
+              "RelativeToolTip": "SportStore.WebApi\\ViewModels\\RegisterVm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T02:34:06.893Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LoginVm.cs",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\Mock Project\\API\\SportStore\\SportStore.WebApi\\ViewModels\\LoginVm.cs",
+              "RelativeDocumentMoniker": "SportStore.WebApi\\ViewModels\\LoginVm.cs",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\Mock Project\\API\\SportStore\\SportStore.WebApi\\ViewModels\\LoginVm.cs",
+              "RelativeToolTip": "SportStore.WebApi\\ViewModels\\LoginVm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T02:33:59.946Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ForgotPasswordVm.cs",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\Mock Project\\API\\SportStore\\SportStore.WebApi\\ViewModels\\ForgotPasswordVm.cs",
+              "RelativeDocumentMoniker": "SportStore.WebApi\\ViewModels\\ForgotPasswordVm.cs",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\Mock Project\\API\\SportStore\\SportStore.WebApi\\ViewModels\\ForgotPasswordVm.cs",
+              "RelativeToolTip": "SportStore.WebApi\\ViewModels\\ForgotPasswordVm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T02:33:52.629Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AuthResultVm.cs",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\Mock Project\\API\\SportStore\\SportStore.WebApi\\ViewModels\\AuthResultVm.cs",
+              "RelativeDocumentMoniker": "SportStore.WebApi\\ViewModels\\AuthResultVm.cs",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\Mock Project\\API\\SportStore\\SportStore.WebApi\\ViewModels\\AuthResultVm.cs",
+              "RelativeToolTip": "SportStore.WebApi\\ViewModels\\AuthResultVm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T02:33:44.487Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

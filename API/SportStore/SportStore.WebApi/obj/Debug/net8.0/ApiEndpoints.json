@@ -191,6 +191,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "SportStore.WebApi.Controllers.AuthenticationController",
+    "Method": "SomeEndpoint",
+    "RelativePath": "api/Authentication/some-endpoint",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SportStore.WebApi.Controllers.Admin.BrandsController",
     "Method": "CreateBrand",
     "RelativePath": "api/Brands/create-brand",

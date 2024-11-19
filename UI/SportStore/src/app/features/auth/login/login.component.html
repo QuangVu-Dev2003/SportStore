@@ -2,32 +2,70 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-sm-12 col-md-8 col-lg-6 mb-30">
-                <form action="#">
+                <form #ngForm="ngForm" (ngSubmit)="onFormSubmit()">
                     <div class="login-form">
                         <h4 class="login-title">Đăng Nhập</h4>
                         <div class="row">
                             <div class="col-md-12 col-12 mb-20">
-                                <label>Email</label>
-                                <input class="mb-0" type="email" placeholder="Nhập Email của bạn...">
+                                <label for="email">Email</label>
+                                <input class="mb-0" type="email" id="email" name="email"
+                                    placeholder="Nhập Email của bạn..." [(ngModel)]="model.email" required />
                             </div>
                             <div class="col-12 mb-20">
-                                <label>Mật khẩu</label>
-                                <input class="mb-0" type="password" placeholder="Nhập mật khẩu của bạn...">
+                                <label for="password">Mật khẩu</label>
+                                <input class="mb-0" type="password" id="password" name="password"
+                                    placeholder="Nhập mật khẩu của bạn..." [(ngModel)]="model.password" required />
                             </div>
                             <div class="col-md-8">
                                 <div class="check-box d-inline-block ml-0 ml-md-2 mt-10">
-                                    <input type="checkbox" id="remember_me">
+                                    <input type="checkbox" id="remember_me" [(ngModel)]="rememberMe"
+                                        name="rememberMe" />
                                     <label for="remember_me">Lưu đăng nhập</label>
                                 </div>
                             </div>
                             <div class="col-md-4 mt-10 mb-20 text-left text-md-right">
-                                <a href="#"> Quên mật khẩu?</a>
+                                <button type="button" class="btn btn-link" data-bs-toggle="modal"
+                                    data-bs-target="#forgotPasswordModal">
+                                    Quên mật khẩu?
+                                </button>
                             </div>
                             <div class="col-md-12">
-                                <button class="register-button mt-0">Đăng Nhập</button>
+                                <button type="submit" class="register-button mt-0" [disabled]="!ngForm.valid">
+                                    Đăng Nhập
+                                </button>
+                            </div>
+                            <div class="col-12 mt-10 text-danger" *ngIf="errorMessage">
+                                {{ errorMessage }}
                             </div>
                         </div>
                     </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Forgot Password Modal -->
+<div id="forgotPasswordModal" class="modal fade" tabindex="-1" aria-labelledby="forgotPasswordModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="forgotPasswordModalLabel">Quên mật khẩu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form #forgotPasswordForm="ngForm" (ngSubmit)="onForgotPasswordSubmit()">
+                    <div class="mb-3">
+                        <label for="forgotPasswordEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="forgotPasswordEmail"
+                            placeholder="Nhập email của bạn..." [(ngModel)]="forgotPasswordEmail" name="email"
+                            required />
+                    </div>
+                    <div *ngIf="forgotPasswordError" class="text-danger">{{ forgotPasswordError }}</div>
+                    <button type="submit" class="btn btn-primary" [disabled]="!forgotPasswordForm.valid">
+                        Gửi yêu cầu
+                    </button>
                 </form>
             </div>
         </div>

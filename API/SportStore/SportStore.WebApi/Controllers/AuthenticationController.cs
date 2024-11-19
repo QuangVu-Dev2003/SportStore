@@ -8,6 +8,7 @@ using SportStore.BusinessLogicLayer.Services;
 using SportStore.DataAccessLayer.Data;
 using SportStore.DataAccessLayer.Models;
 using SportStore.WebApi.ViewModels;
+using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -58,7 +59,7 @@ namespace SportStore.WebApi.Controllers
             if (!result.Succeeded)
             {
                 var errors = string.Join(", ", result.Errors.Select(e => e.Description));
-                return BadRequest($"Không thể tạo người dùng: {errors}");
+                return BadRequest(new { message = "Không thể tạo người dùng.", errors });
             }
 
             if (await _roleManager.RoleExistsAsync("User"))
@@ -67,8 +68,10 @@ namespace SportStore.WebApi.Controllers
             }
 
             var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-            var confirmationLink = Url.Action("ConfirmEmail", "Authentication",
-                new { token, email = user.Email }, Request.Scheme);
+            //var confirmationLink = Url.Action("ConfirmEmail", "Authentication",
+            //    new { token, email = user.Email }, Request.Scheme);
+            var clientAppUrl = _configuration["ClientAppUrl"];
+            var confirmationLink = $"{clientAppUrl}/confirm-email?token={Uri.EscapeDataString(token)}&email={Uri.EscapeDataString(user.Email)}";
 
             var emailMessage = $"Please confirm your account by clicking <a href='{confirmationLink}'>here</a>.";
             await _emailSender.SendEmailAsync(user.Email, "Xác nhận tài khoản", emailMessage);
@@ -77,9 +80,9 @@ namespace SportStore.WebApi.Controllers
         }
 
         [HttpGet("confirm-email")]
-        [Authorize(Roles = "User")]
         public async Task<IActionResult> ConfirmEmail(string token, string email)
         {
+            token = Uri.UnescapeDataString(token);
             var user = await _userManager.FindByEmailAsync(email);
             if (user == null)
             {
@@ -89,7 +92,7 @@ namespace SportStore.WebApi.Controllers
             var result = await _userManager.ConfirmEmailAsync(user, token);
             if (result.Succeeded)
             {
-                return Ok("Email được xác nhận thành công!");
+                return Ok("Xác nhận email thành công!");
             }
             else
             {
@@ -105,6 +108,11 @@ namespace SportStore.WebApi.Controllers
             if (user == null)
             {
                 return BadRequest("Email không tồn tại.");
+            }
+
+            if (!user.EmailConfirmed)
+            {
+                return BadRequest("Email chưa được xác nhận. Vui lòng xác nhận email trước khi đăng nhập.");
             }
 
             if (user.LockoutEnd.HasValue && user.LockoutEnd > DateTime.UtcNow)
@@ -138,28 +146,32 @@ namespace SportStore.WebApi.Controllers
         }
 
         [HttpPost("forgot-password")]
-        [Authorize(Roles = "User")]
+        [AllowAnonymous]
         public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordVm forgotPasswordVm)
         {
             if (!ModelState.IsValid)
             {
-                return BadRequest("Email là bắt buộc");
+                return BadRequest(new { message = "Email là bắt buộc" });
             }
 
             var user = await _userManager.FindByEmailAsync(forgotPasswordVm.Email);
             if (user == null)
             {
-                return Ok("Đã gửi yêu cầu.");
+                return Ok(new { message = "Đã gửi yêu cầu." });
             }
 
             var token = await _userManager.GeneratePasswordResetTokenAsync(user);
-            var resetLink = Url.Action("ResetPassword", "Authentication",
-                new { token, email = forgotPasswordVm.Email }, Request.Scheme);
+            var clientAppUrl = _configuration["ClientAppUrl"];
+            //var resetLink = Url.Action("ResetPassword", "Authentication",
+            //    new { token, email = forgotPasswordVm.Email }, Request.Scheme);
 
-            var emailMessage = $"Please reset your password by clicking <a href='{resetLink}'>here</a>.";
+            //var resetLink = $"http://localhost:4200/reset-password?token={Uri.EscapeDataString(token)}&email={forgotPasswordVm.Email}";
+            var resetLink = $"{clientAppUrl}/reset-password?token={Uri.EscapeDataString(token)}&email={Uri.EscapeDataString(forgotPasswordVm.Email)}";
+
+            var emailMessage = $"Click vào đây để đặt lại mật khẩu: <a href='{resetLink}'>Đặt lại mật khẩu</a>";
             await _emailSender.SendEmailAsync(forgotPasswordVm.Email, "Đặt lại mật khẩu", emailMessage);
 
-            return Ok("Đã gửi yêu cầu.");
+            return Ok(new { message = "Đã gửi yêu cầu." });
         }
 
         [HttpPost("send-email")]
@@ -186,28 +198,40 @@ namespace SportStore.WebApi.Controllers
         }
 
         [HttpPost("reset-password")]
-        [Authorize(Roles = "User")]
+        [AllowAnonymous]
         public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordVm resetPasswordVm)
         {
+            Console.WriteLine("Reset Password Payload Received:");
+            Console.WriteLine($"Email: {resetPasswordVm.Email}");
+            Console.WriteLine($"Token: {resetPasswordVm.Token}");
+            Console.WriteLine($"New Password: {resetPasswordVm.NewPassword}");
+
             if (!ModelState.IsValid)
             {
+                Console.WriteLine("ModelState Invalid");
                 return BadRequest(ModelState);
             }
 
             var user = await _userManager.FindByEmailAsync(resetPasswordVm.Email);
             if (user == null)
             {
+                Console.WriteLine("User not found");
                 return BadRequest("Yêu cầu không hợp lệ.");
             }
-            Console.WriteLine($"Token received: {resetPasswordVm.Token}");
-            var resetPassResult = await _userManager.ResetPasswordAsync(user, resetPasswordVm.Token, resetPasswordVm.NewPassword);
+
+            var decodedToken = Uri.UnescapeDataString(resetPasswordVm.Token);
+            Console.WriteLine($"Decoded Token: {decodedToken}");
+
+            var resetPassResult = await _userManager.ResetPasswordAsync(user, decodedToken, resetPasswordVm.NewPassword);
 
             if (!resetPassResult.Succeeded)
             {
                 var errors = resetPassResult.Errors.Select(e => e.Description);
+                Console.WriteLine($"Reset password failed: {string.Join(", ", errors)}");
                 return BadRequest(new { Errors = errors });
             }
 
+            Console.WriteLine("Password reset successfully");
             return Ok("Mật khẩu đã được đặt lại thành công.");
         }
 
@@ -225,6 +249,7 @@ namespace SportStore.WebApi.Controllers
             var roles = await _userManager.GetRolesAsync(user);
             foreach (var role in roles)
             {
+                Console.WriteLine($"Adding role to token: {role}");
                 authClaims.Add(new Claim(ClaimTypes.Role, role));
             }
 
@@ -260,6 +285,22 @@ namespace SportStore.WebApi.Controllers
             };
 
             return response;
+        }
+
+        [Authorize]
+        [HttpGet("some-endpoint")]
+        public IActionResult SomeEndpoint()
+        {
+            var authHeader = Request.Headers["Authorization"];
+
+            Console.WriteLine($"Authorization Header: {authHeader}");
+
+            if (string.IsNullOrEmpty(authHeader))
+            {
+                return Unauthorized("No Authorization Header found.");
+            }
+
+            return Ok("Authorization Header received.");
         }
     }
 }

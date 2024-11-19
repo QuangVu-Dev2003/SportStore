@@ -10,30 +10,37 @@
             </div>
             <div class="col-lg-9 col-md-8">
                 <div class="header-top-right">
-                    <ul class="ht-menu">
-                        <li>
-                            <div class="ht-setting-trigger"><span>Đăng Ký / Đăng Nhập</span></div>
-                            <!-- <div class="setting ht-setting">
-                                <ul class="ht-setting-list">
-                                    <li><a href="/login">Đăng Nhập</a></li>
-                                    <li><a href="/register">Đăng Ký</a></li>
-                                </ul>
-                            </div> -->
-                            <div class="setting ht-setting">
-                                <ul class="ht-setting-list">
-                                    <li><a href="/account">My Account</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="login-register.html">Sign In</a></li>
-                                </ul>
+                    <!-- Hiển thị Đăng Nhập / Đăng Ký nếu user === null -->
+                    <ng-container *ngIf="user === null; else loggedIn">
+                        <ul class="ht-menu">
+                            <li>
+                                <div class="ht-setting-trigger"><span>Đăng Ký / Đăng Nhập</span></div>
+                                <div class="setting ht-setting">
+                                    <ul class="ht-setting-list">
+                                        <li><a routerLink="/login">Đăng Nhập</a></li>
+                                        <li><a routerLink="/register">Đăng Ký</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </ng-container>
+
+                    <!-- Hiển thị Tài khoản / Đăng Xuất nếu user !== null -->
+                    <ng-template #loggedIn>
+                        <div class="fix">
+                            <div class="d-flex align-items-center">
+                                <div class="me-4"><a href="/account" class="btn">Xin chào, {{ user?.email }}</a></div>
+                                <div class="d-flex align-items-center">
+                                    <span class="currency-selector-wrapper me-2">Số dư:</span>
+                                    <div class="ht-currency-trigger me-3"><span>99999 đ</span></div>
+                                    <button class="btn btn-primary btn-sm" (click)="onLogout()">Logout</button>
+                                </div>
                             </div>
-                        </li>
-                        <li>
-                            <span class="currency-selector-wrapper">Số dư :</span>
-                            <div class="ht-currency-trigger"><span> đ</span></div>
-                        </li>
-                    </ul>
+                        </div>
+                    </ng-template>
                 </div>
             </div>
+
         </div>
     </div>
 </div>

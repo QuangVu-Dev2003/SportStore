@@ -12,6 +12,7 @@ using SportStore.DataAccessLayer.Models;
 using SportStore.DataAccessLayer.Repositories;
 using SportStore.DataAccessLayer.Repositories.IRepository;
 using SportStore.WebApi.AutoMapper;
+using System.Security.Claims;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -88,7 +89,8 @@ builder.Services
             ValidIssuer = builder.Configuration["JWT:Issuer"],
             ValidateAudience = true,
             ValidAudience = builder.Configuration["JWT:Audience"],
-            ValidateLifetime = true
+            ValidateLifetime = true,
+            RoleClaimType = ClaimTypes.Role
         };
     });
 
