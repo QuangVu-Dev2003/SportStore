@@ -163,9 +163,19 @@ namespace SportStore.DataAccessLayer.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<string>("AccountType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeletionDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
                         .HasMaxLength(256)
@@ -180,6 +190,12 @@ namespace SportStore.DataAccessLayer.Migrations
                     b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("LastLogin")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
@@ -187,6 +203,9 @@ namespace SportStore.DataAccessLayer.Migrations
                         .HasColumnType("bit");
 
                     b.Property<DateTime?>("LockoutEnd")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("MemberSince")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("NormalizedEmail")
@@ -199,6 +218,9 @@ namespace SportStore.DataAccessLayer.Migrations
 
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Phone")
+                        .HasColumnType("int");
 
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");
@@ -253,6 +275,47 @@ namespace SportStore.DataAccessLayer.Migrations
                     b.ToTable("Brands");
                 });
 
+            modelBuilder.Entity("SportStore.DataAccessLayer.Models.CartItemModel", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CartId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CartId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("CartItems");
+                });
+
+            modelBuilder.Entity("SportStore.DataAccessLayer.Models.CartModel", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Carts");
+                });
+
             modelBuilder.Entity("SportStore.DataAccessLayer.Models.CategoryModel", b =>
                 {
                     b.Property<Guid>("CategoryId")
@@ -283,9 +346,6 @@ namespace SportStore.DataAccessLayer.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("OrderCode")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<Guid>("OrderId")
                         .HasColumnType("uniqueidentifier");
 
@@ -297,10 +357,6 @@ namespace SportStore.DataAccessLayer.Migrations
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
-
-                    b.Property<string>("Username")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ODId");
 
@@ -317,22 +373,22 @@ namespace SportStore.DataAccessLayer.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("CreateDate")
+                    b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("OrderCode")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("ShippingAddress")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
+                    b.Property<decimal>("TotalAmount")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<string>("UserId")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Username")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("OrderId");
 
@@ -486,6 +542,36 @@ namespace SportStore.DataAccessLayer.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("SportStore.DataAccessLayer.Models.CartItemModel", b =>
+                {
+                    b.HasOne("SportStore.DataAccessLayer.Models.CartModel", "Cart")
+                        .WithMany("Items")
+                        .HasForeignKey("CartId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SportStore.DataAccessLayer.Models.ProductModel", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cart");
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("SportStore.DataAccessLayer.Models.CartModel", b =>
+                {
+                    b.HasOne("SportStore.DataAccessLayer.Models.AppUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("SportStore.DataAccessLayer.Models.OrderDetailModel", b =>
                 {
                     b.HasOne("SportStore.DataAccessLayer.Models.OrderModel", "Order")
@@ -565,6 +651,11 @@ namespace SportStore.DataAccessLayer.Migrations
             modelBuilder.Entity("SportStore.DataAccessLayer.Models.BrandModel", b =>
                 {
                     b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("SportStore.DataAccessLayer.Models.CartModel", b =>
+                {
+                    b.Navigation("Items");
                 });
 
             modelBuilder.Entity("SportStore.DataAccessLayer.Models.CategoryModel", b =>

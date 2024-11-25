@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.WebApi\\SportStore.WebApi.csproj": {}
+    "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\SportStore.WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj": {
+    "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj",
+        "projectUniqueName": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj",
         "projectName": "SportStore.BusinessLogicLayer",
-        "projectPath": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj",
+        "projectPath": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj",
         "packagesPath": "C:\\Users\\vunuo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.BusinessLogicLayer\\obj\\",
+        "outputPath": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.BusinessLogicLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vunuo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -29,8 +29,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj"
+              "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj"
               }
             }
           }
@@ -83,14 +83,14 @@
         }
       }
     },
-    "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj": {
+    "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj",
+        "projectUniqueName": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj",
         "projectName": "SportStore.DataAccessLayer",
-        "projectPath": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj",
+        "projectPath": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj",
         "packagesPath": "C:\\Users\\vunuo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.DataAccessLayer\\obj\\",
+        "outputPath": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.DataAccessLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vunuo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -172,14 +172,14 @@
         }
       }
     },
-    "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.WebApi\\SportStore.WebApi.csproj": {
+    "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\SportStore.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.WebApi\\SportStore.WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\SportStore.WebApi.csproj",
         "projectName": "SportStore.WebApi",
-        "projectPath": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.WebApi\\SportStore.WebApi.csproj",
+        "projectPath": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\SportStore.WebApi.csproj",
         "packagesPath": "C:\\Users\\vunuo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.WebApi\\obj\\",
+        "outputPath": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vunuo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -197,11 +197,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj": {
-                "projectPath": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj"
+              "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj": {
+                "projectPath": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj"
               },
-              "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj": {
-                "projectPath": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj"
+              "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj": {
+                "projectPath": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj"
               }
             }
           }
@@ -242,6 +242,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.10, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

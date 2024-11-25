@@ -13,5 +13,6 @@ namespace SportStore.BusinessLogicLayer.Services.IService
         Task<bool> DeleteProductAsync(Guid productId);
         Task<IEnumerable<ProductVm>> GetProductsByCategoryAsync(string categoryName);
         Task<IEnumerable<ProductVm>> GetProductsByBrandAsync(string brandName);
+        Task<IEnumerable<ProductVm>> SearchProductsAsync(List<string>? categoryName, List<string>? brandName);
     }
 }

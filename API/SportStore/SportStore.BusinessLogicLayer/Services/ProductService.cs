@@ -203,6 +203,30 @@ namespace SportStore.BusinessLogicLayer.Services
             return products.Select(MapToViewModel);
         }
 
+        public async Task<IEnumerable<ProductVm>> SearchProductsAsync(List<string>? categoryNames, List<string>? brandNames)
+        {
+            var query = _unitOfWork.ProductRepository
+                .GetDbSet()
+                .Include(p => p.Brand)
+                .Include(p => p.ProductCategoryModels)
+                    .ThenInclude(pc => pc.Category)
+                .AsQueryable();
+
+            if (categoryNames != null && categoryNames.Any())
+            {
+                query = query.Where(p => p.ProductCategoryModels
+                    .Any(pc => categoryNames.Contains(pc.Category.CategoryName)));
+            }
+
+            if (brandNames != null && brandNames.Any())
+            {
+                query = query.Where(p => brandNames.Contains(p.Brand.BrandName));
+            }
+
+            var products = await query.ToListAsync();
+            return products.Select(MapToViewModel);
+        }
+
         private async Task<string> SaveImageAsync(IFormFile imageFile)
         {
             var uploadFolder = Path.Combine(_webHostEnvironment.WebRootPath, "img", "products");
@@ -231,7 +255,7 @@ namespace SportStore.BusinessLogicLayer.Services
         {
             if (product == null)
             {
-                throw new ArgumentNullException(nameof(product), "Product cannot be null.");
+                throw new ArgumentNullException(nameof(product), "Sản phẩm không thể là null.");
             }
 
             return new ProductVm
@@ -244,9 +268,9 @@ namespace SportStore.BusinessLogicLayer.Services
                 Instock = product.Instock,
                 Status = (ProductViewStatus)product.Status,
                 AddDate = product.AddDate,
-                BrandName = product.Brand?.BrandName ?? "Unknown Brand",
+                BrandName = product.Brand?.BrandName ?? "Thương hiệu không rõ",
                 CategoryNames = product.ProductCategoryModels != null
-                    ? product.ProductCategoryModels.Select(pc => pc.Category?.CategoryName ?? "Unknown Category").ToList()
+                    ? product.ProductCategoryModels.Select(pc => pc.Category?.CategoryName ?? "Danh mục chưa biết").ToList()
                     : new List<string>(),
                 Images = product.Images ?? new List<string>()
             };

@@ -47,10 +47,21 @@ namespace SportStore.WebApi.Controllers.Admin
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateCategory(Guid id, [FromForm] CategoryVm categoryVm)
         {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new { message = "Invalid data", errors = ModelState });
+            }
 
             var updated = await _categoryService.UpdateCategoryAsync(id, categoryVm);
-            return updated ? Ok("Cập nhật thành công") : NotFound("Không tìm thấy danh mục.");
+
+            if (updated)
+            {
+                return Ok(new { message = "Cập nhật thành công" });
+            }
+            else
+            {
+                return NotFound(new { message = "Không tìm thấy danh mục." }); 
+            }
         }
 
         [HttpDelete("delete-category/{id}")]
@@ -58,7 +69,14 @@ namespace SportStore.WebApi.Controllers.Admin
         public async Task<IActionResult> DeleteCategory(Guid id)
         {
             var deleted = await _categoryService.DeleteCategoryAsync(id);
-            return deleted ? Ok("Xóa thành công") : NotFound("Không tìm thấy danh mục.");
+            if (deleted)
+            {
+                return Ok(new { message = "Xóa thành công" });
+            }
+            else
+            {
+                return NotFound(new { message = "Không tìm thấy danh mục." }); 
+            }
         }
     }
 }

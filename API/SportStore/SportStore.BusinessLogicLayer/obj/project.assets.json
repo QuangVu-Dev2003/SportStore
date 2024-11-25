@@ -6421,11 +6421,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj",
+      "projectUniqueName": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj",
       "projectName": "SportStore.BusinessLogicLayer",
-      "projectPath": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj",
+      "projectPath": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj",
       "packagesPath": "C:\\Users\\vunuo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.BusinessLogicLayer\\obj\\",
+      "outputPath": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.BusinessLogicLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vunuo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6443,8 +6443,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj": {
-              "projectPath": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj"
+            "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj": {
+              "projectPath": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj"
             }
           }
         }

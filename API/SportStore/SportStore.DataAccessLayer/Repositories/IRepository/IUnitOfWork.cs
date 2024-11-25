@@ -10,6 +10,8 @@ namespace SportStore.DataAccessLayer.Repositories.IRepository
         IGenericRepository<CategoryModel> CategoryRepository { get; }
         IGenericRepository<BrandModel> BrandRepository { get; }
         IGenericRepository<AppUser> UserRepository { get; }
+        ICartRepository CartRepository { get; }
+        IOrderRepository OrderRepository { get; }
         IGenericRepository<T> GenericRepository<T>() where T : class;
 
         Task BeginTransactionAsync();

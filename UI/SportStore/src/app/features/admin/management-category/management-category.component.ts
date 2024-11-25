@@ -5,11 +5,13 @@ import { RouterLink } from '@angular/router';
 import { Category, CategoryStatus } from '../models/category.model';
 import { debounceTime, Subject } from 'rxjs';
 import { CategoryService } from '../services/category.service';
+import { NgxPaginationModule } from 'ngx-pagination';
+import * as XLSX from 'xlsx';
 
 @Component({
   selector: 'app-management-category',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink],
+  imports: [CommonModule, FormsModule, RouterLink, NgxPaginationModule],
   templateUrl: './management-category.component.html',
   styleUrl: './management-category.component.css'
 })
@@ -33,6 +35,7 @@ export class ManagementCategoryComponent implements AfterViewInit, OnInit {
   selectedFile: File | null = null;
   CategoryStatus = CategoryStatus;
   constructor(private renderer: Renderer2, private categoryService: CategoryService) { }
+  currentPage: number = 1;
 
   ngOnInit(): void {
     this.loadCategories();
@@ -43,7 +46,7 @@ export class ManagementCategoryComponent implements AfterViewInit, OnInit {
   }
   onSearchInput(event: Event): void {
     const target = event.target as HTMLInputElement;
-    this.searchTerm$.next(target.value);
+    this.searchTerm$.next(target.value.trim());
   }
 
   loadCategories(): void {
@@ -101,15 +104,53 @@ export class ManagementCategoryComponent implements AfterViewInit, OnInit {
     this.isAddModalOpen = false;
   }
 
+  // addCategory(event: Event): void {
+  //   event.preventDefault();
+  //   const formData = new FormData();
+  //   formData.append('categoryName', this.newCategoryData.categoryName);
+  //   formData.append('description', this.newCategoryData.description || '');
+  //   formData.append('status', this.newCategoryData.status);
+
+  //   if (this.selectedFile) {
+  //     formData.append('image', this.selectedFile, this.selectedFile.name);
+  //   }
+
+  //   this.categoryService.createCategory(formData).subscribe(
+  //     () => {
+  //       this.loadCategories();
+  //       this.closeAddModal();
+  //     },
+  //     (error) => {
+  //       console.error('Error adding brand:', error);
+  //     }
+  //   );
+  // }
   addCategory(event: Event): void {
     event.preventDefault();
+    if (!this.newCategoryData.categoryName.trim()) {
+      alert('Tên danh mục không được để trống. Vui lòng nhập tên hợp lệ.');
+      return;
+    }
+
+    const isDuplicateName = this.categories.some(
+      (category) =>
+        category.categoryName.toLowerCase() ===
+        this.newCategoryData.categoryName.toLowerCase()
+    );
+
+    if (isDuplicateName) {
+      alert('Tên danh mục đã tồn tại. Vui lòng chọn tên khác.');
+      return;
+    }
+
     const formData = new FormData();
     formData.append('categoryName', this.newCategoryData.categoryName);
     formData.append('description', this.newCategoryData.description || '');
     formData.append('status', this.newCategoryData.status);
 
-    if (this.selectedFile) {
-      formData.append('image', this.selectedFile, this.selectedFile.name);
+    // Thêm URL của ảnh vào formData
+    if (this.newCategoryData.image) {
+      formData.append('imageUrl', this.newCategoryData.image);
     }
 
     this.categoryService.createCategory(formData).subscribe(
@@ -118,10 +159,11 @@ export class ManagementCategoryComponent implements AfterViewInit, OnInit {
         this.closeAddModal();
       },
       (error) => {
-        console.error('Error adding brand:', error);
+        console.error('Error adding category:', error);
       }
     );
   }
+
 
   closeEditModal(): void {
     this.isEditModalOpen = false;
@@ -143,7 +185,23 @@ export class ManagementCategoryComponent implements AfterViewInit, OnInit {
   }
 
   updateBrand(event: Event): void {
+    console.log(this.categories)
     event.preventDefault();
+    // if (!this.newCategoryData.categoryName) {
+    //   alert('Tên danh mục không được để trống. Vui lòng nhập tên hợp lệ.');
+    //   return;
+    // }
+
+    const isDuplicateName = this.categories.some(
+      (category) =>
+        category.categoryName.toLowerCase() ===
+        this.newCategoryData.categoryName.toLowerCase()
+    );
+
+    if (isDuplicateName) {
+      alert('Tên danh mục đã tồn tại. Vui lòng chọn tên khác.');
+      return;
+    }
     const formData = new FormData();
     formData.append('categoryName', this.editCategoryData.categoryName);
     formData.append('description', this.editCategoryData.description || '');
@@ -155,14 +213,17 @@ export class ManagementCategoryComponent implements AfterViewInit, OnInit {
 
     this.categoryService.updateCategory(this.editCategoryData.categoryId, formData).subscribe(
       () => {
-        this.loadCategories();
-        this.closeEditModal();
+        alert('Category updated successfully!');
+        window.location.reload(); // Reload lại trang
       },
       (error) => {
-        console.error('Error updating brand:', error);
+        console.error('Error updating category:', error);
+        alert('Failed to update category. Please try again.');
       }
     );
   }
+
+
   isDeleteModalOpen: boolean = false;
   isFinalConfirmation: boolean = false;
   categoryToDelete: Category | null = null;
@@ -183,13 +244,12 @@ export class ManagementCategoryComponent implements AfterViewInit, OnInit {
     if (this.categoryToDelete) {
       this.categoryService.deleteCategory(this.categoryToDelete.categoryId).subscribe(
         () => {
-          this.loadCategories();
-          this.closeDeleteModal();
-          console.log('Brand deleted successfully');
+          alert('Brand deleted successfully');
+          location.reload(); // Reload lại trang
         },
         (error) => {
           console.error('Error deleting brand:', error);
-          this.closeDeleteModal();
+          alert('An error occurred while deleting the brand. Please try again.');
         }
       );
     }
@@ -208,5 +268,22 @@ export class ManagementCategoryComponent implements AfterViewInit, OnInit {
         });
       });
     }
+  }
+
+  exportToExcel(): void {
+    const usersForExport = this.categories.map((category) => ({
+      Category_ID: category.categoryId,
+      Category_Name: category.categoryName,
+      Description: category.description,
+      IMG: category.image,
+      status: category.status
+    }));
+
+    const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(usersForExport);
+
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Users');
+
+    XLSX.writeFile(wb, 'users.xlsx');
   }
 }

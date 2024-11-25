@@ -4,28 +4,24 @@
             <div class="col-lg-3 col-md-4">
                 <div class="header-top-left">
                     <ul class="phone-wrap">
-                        <li><span>Số điện thoại:</span><a href="#">(+123) 123 321 345</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-9 col-md-8">
                 <div class="header-top-right">
-                    <!-- Hiển thị Đăng Nhập / Đăng Ký nếu user === null -->
                     <ng-container *ngIf="user === null; else loggedIn">
                         <ul class="ht-menu">
                             <li>
                                 <div class="ht-setting-trigger"><span>Đăng Ký / Đăng Nhập</span></div>
                                 <div class="setting ht-setting">
                                     <ul class="ht-setting-list">
-                                        <li><a routerLink="/login">Đăng Nhập</a></li>
-                                        <li><a routerLink="/register">Đăng Ký</a></li>
+                                        <li><a href="/login">Đăng Nhập</a></li>
+                                        <li><a href="/register">Đăng Ký</a></li>
                                     </ul>
                                 </div>
                             </li>
                         </ul>
                     </ng-container>
-
-                    <!-- Hiển thị Tài khoản / Đăng Xuất nếu user !== null -->
                     <ng-template #loggedIn>
                         <div class="fix">
                             <div class="d-flex align-items-center">
@@ -126,18 +122,17 @@
                 <div class="hb-menu">
                     <nav>
                         <ul>
-                            <li><a [routerLink]="['/']" class="no-after">Trang Chủ</a></li>
+                            <li><a href="/" class="no-after">Trang Chủ</a></li>
                             <li><a href="/shop" class="no-after">Shop</a></li>
                             <li><a [routerLink]="['/wishlist']" class="no-after">Danh sách yêu thích</a></li>
-                            <li><a [routerLink]="['/cart']" class="no-after">Giỏ hàng</a></li>
-                            <li><a href="#" class="no-after">About Us</a></li>
-                            <li><a href="contact.html" class="no-after">Contact</a></li>
+                            <li><a href="/cart" class="no-after">Giỏ hàng</a></li>
                             <li class="dropdown-holder"><a href="/admin">Admin</a>
                                 <ul class="hb-dropdown">
                                     <li><a href="/admin/dashboard">DashBoard</a></li>
                                     <li><a href="/admin/management-brand">Quản Lý Thương Hiệu</a></li>
                                     <li><a href="/admin/management-category">Quản Lý Danh Mục</a></li>
                                     <li><a href="/admin/management-product">Quản Lý Sản Phẩm</a></li>
+                                    <li><a href="/admin/management-user">Quản Lý Người Dùng</a></li>
                                 </ul>
                             </li>
                         </ul>

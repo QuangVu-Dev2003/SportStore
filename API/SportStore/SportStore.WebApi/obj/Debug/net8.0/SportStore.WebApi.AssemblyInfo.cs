@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SportStore.WebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+06774f70b55d89f81e0e1d1c5f5ac940d06e570e")]
 [assembly: System.Reflection.AssemblyProductAttribute("SportStore.WebApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SportStore.WebApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -43,8 +43,8 @@ namespace SportStore.BusinessLogicLayer.ViewModels
         public string BrandName { get; set; }
 
         [Required(ErrorMessage = "Vui lòng chọn danh mục.")]
-        public List<string> CategoryNames { get; set; } = new List<string>(); 
+        public List<string> CategoryNames { get; set; } = new List<string>();
 
-        public IEnumerable<IFormFile>? ImageFiles { get; set; } 
+        public IEnumerable<IFormFile>? ImageFiles { get; set; }
     }
 }

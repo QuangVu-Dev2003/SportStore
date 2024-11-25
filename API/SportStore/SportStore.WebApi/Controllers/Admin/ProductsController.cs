@@ -87,7 +87,7 @@ namespace SportStore.WebApi.Controllers.Admin
                 {
                     message = "Đã xảy ra lỗi khi cập nhật sản phẩm.",
                     error = ex.Message,
-                    stackTrace = ex.StackTrace 
+                    stackTrace = ex.StackTrace
                 });
             }
         }
@@ -137,6 +137,24 @@ namespace SportStore.WebApi.Controllers.Admin
             catch (Exception ex)
             {
                 return NotFound(new { message = ex.Message });
+            }
+        }
+
+        [HttpGet("search")]
+        public async Task<IActionResult> SearchProducts([FromQuery] List<string>? categoryNames, [FromQuery] List<string>? brandNames)
+        {
+            try
+            {
+                var products = await _productService.SearchProductsAsync(categoryNames, brandNames);
+                return Ok(products);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new
+                {
+                    message = "Đã xảy ra lỗi khi tìm kiếm sản phẩm.",
+                    error = ex.Message
+                });
             }
         }
     }

@@ -10,10 +10,6 @@ namespace SportStore.DataAccessLayer.Models
 
         public Guid OrderId { get; set; }
 
-        public string Username { get; set; }
-
-        public Guid OrderCode { get; set; }
-
         public Guid ProductId { get; set; }
 
         public decimal Price { get; set; }

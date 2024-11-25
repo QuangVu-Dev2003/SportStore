@@ -112,5 +112,23 @@ export class AuthService {
       })
     );
   }
+  // In auth.service.ts
+  getAccountStatus(): Observable<any> {
+    return this.http.get<any>('https://localhost:7192/api/User/account-status').pipe(
+      catchError((error) => {
+        console.error('Error fetching account status:', error);
+        return throwError(() => new Error('Failed to fetch account status.'));
+      })
+    );
+  }
+  // In auth.service.ts
+  restoreAccount(email: string): Observable<any> {
+    return this.http.post(`https://localhost:7192/api/User/restore-account`, { email }).pipe(
+      catchError((error) => {
+        console.error('Error restoring account:', error);
+        return throwError(() => new Error('Failed to restore account.'));
+      })
+    );
+  }
 
 }

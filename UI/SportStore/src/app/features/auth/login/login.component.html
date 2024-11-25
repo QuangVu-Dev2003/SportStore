@@ -13,13 +13,20 @@
                             </div>
                             <div class="col-12 mb-20">
                                 <label for="password">Mật khẩu</label>
-                                <input class="mb-0" type="password" id="password" name="password"
-                                    placeholder="Nhập mật khẩu của bạn..." [(ngModel)]="model.password" required />
+                                <div class="input-group">
+                                    <input class="form-control mb-0" [type]="showPassword ? 'text' : 'password'"
+                                        id="password" name="password" placeholder="Nhập mật khẩu của bạn..."
+                                        [(ngModel)]="model.password" required />
+                                    <button type="button" class="btn btn-outline-secondary"
+                                        (click)="togglePasswordVisibility()">
+                                        <i [ngClass]="showPassword ? 'bi bi-eye' : 'bi bi-eye-slash'"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="col-md-8">
                                 <div class="check-box d-inline-block ml-0 ml-md-2 mt-10">
                                     <input type="checkbox" id="remember_me" [(ngModel)]="rememberMe"
-                                        name="rememberMe" />
+                                        (change)="onRememberMeChange()" name="rememberMe" />
                                     <label for="remember_me">Lưu đăng nhập</label>
                                 </div>
                             </div>
@@ -35,7 +42,13 @@
                                 </button>
                             </div>
                             <div class="col-12 mt-10 text-danger" *ngIf="errorMessage">
-                                {{ errorMessage }}
+                                <div>{{ errorMessage }}</div>
+                                <div *ngIf="failedAttempts !== undefined && !isEmailUnconfirmed">
+                                    Bạn đã nhập sai mật khẩu {{ failedAttempts }}/5 lần.
+                                </div>
+                                <div *ngIf="lockoutMessage && remainingLockoutTime !== null">
+                                    Tài khoản của bạn đã bị khóa. Thời gian còn lại: {{ timeLeft }}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -45,7 +58,6 @@
     </div>
 </div>
 
-<!-- Forgot Password Modal -->
 <div id="forgotPasswordModal" class="modal fade" tabindex="-1" aria-labelledby="forgotPasswordModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">

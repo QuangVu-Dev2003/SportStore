@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1xB06DGL7CE=",
+  "dgSpecHash": "3hc2ddIsncQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj",
+  "projectFilePath": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vunuo\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\vunuo\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

@@ -1,0 +1,79 @@
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="breadcrumb-content">
+            <ul>
+                <li><a href="/">Trang chủ</a></li>
+                <li class="active">Danh sách giỏ hàng</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="Shopping-cart-area pt-60 pb-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <form action="#">
+                    <div class="table-content table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="li-product-remove"></th>
+                                    <th class="cart-product-name">Tên sản phẩm</th>
+                                    <th class="li-product-price">Giá</th>
+                                    <th class="li-product-quantity">Số lượng</th>
+                                    <th class="li-product-subtotal">Tổng</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of cartItems">
+                                    <td class="li-product-remove"><a href="javascript:void(0)"
+                                            (click)="removeItem(item)"><i class="fa fa-times"></i></a></td>
+                                    <td class="li-product-name"><a href="#">{{item.productName}}</a></td>
+                                    <td class="li-product-price"><span class="amount">{{item.price}}</span></td>
+                                    <td class="quantity">
+                                        <div class="cart-plus-minus">
+                                            <!-- Sử dụng (ngModel) để đồng bộ hóa giá trị và chỉ gọi updateCartItem khi giá trị thay đổi -->
+                                            <input class="cart-plus-minus-box" [(ngModel)]="item.quantity"
+                                                [value]="item.quantity" (change)="updateCartItem(item)" type="text">
+                                            <div class="dec qtybutton" (click)="decreaseQuantity(item)">
+                                                <i class="fa fa-angle-down"></i>
+                                            </div>
+                                            <div class="inc qtybutton" (click)="increaseQuantity(item)">
+                                                <i class="fa fa-angle-up"></i>
+                                            </div>
+
+                                        </div>
+                                    </td>
+                                    <td class="product-subtotal"><span class="amount">
+                                            {{ item.price * item.quantity | number:'1.0-0' }} VND
+                                        </span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="coupon-all">
+                                <div class="coupon2">
+                                    <input class="button" name="update_cart" value="Clear cart" type="submit"
+                                        (click)="confirmClearCart()">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5 ml-auto">
+                            <div class="cart-page-total">
+                                <h2>Tổng tiền giỏ hàng</h2>
+                                <ul>
+                                    <li>Tổng Tiền<span>{{ totalCartPrice | number:'1.0-0' }} VND</span></li>
+                                </ul>
+                                <a href="#">checkout</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

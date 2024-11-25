@@ -18,7 +18,13 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
+//    .AddJsonOptions(options =>
+//{
+//    options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
+//});
+
 builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<SportStoreDbContext>(option =>
@@ -26,7 +32,14 @@ builder.Services.AddDbContext<SportStoreDbContext>(option =>
     option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
-builder.Services.AddHttpContextAccessor(); 
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromDays(30);
+});
+
+builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddDistributedMemoryCache();
 
 builder.Services.ConfigureApplicationCookie(options =>
 {
@@ -114,16 +127,32 @@ builder.Services.AddTransient<IEmailSender, EmailSender>();
 builder.Services.AddScoped<EmailSender>();
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+
 builder.Services.AddScoped<ICategoryService, CategoryService>();
+
 builder.Services.AddScoped<IBrandService, BrandService>();
+
 builder.Services.AddScoped<IProductService, ProductService>();
+
 builder.Services.AddScoped<IUserService, UserService>();
+
+builder.Services.AddHostedService<UserCleanupService>();
+
+builder.Services.AddScoped<ICartService, CartService>();
+
+builder.Services.AddScoped<IAdminOrderService, AdminOrderService>();
+
+builder.Services.AddScoped<IUserOrderService, UserOrderService>();
+
+builder.Services.AddScoped<IOrderService, OrderService>();
 
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 builder.Services.AddLogging();
 
 var app = builder.Build();
+
+app.UseSession();
 
 using (var scope = app.Services.CreateScope())
 {
@@ -150,7 +179,9 @@ app.UseCors(options =>
 });
 
 app.UseAuthentication();
+
 app.UseAuthorization();
+
 app.MapControllers();
 
 var wwwrootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
@@ -178,7 +209,7 @@ public static class SeedRoles
             await roleManager.CreateAsync(new IdentityRole("User"));
         }
 
-        var adminEmail = "vunuong003@gmail.com"; 
+        var adminEmail = "vunuong003@gmail.com";
         var existingAdmin = await userManager.FindByEmailAsync(adminEmail);
 
         if (existingAdmin == null)
@@ -187,10 +218,10 @@ public static class SeedRoles
             {
                 UserName = adminEmail,
                 Email = adminEmail,
-                EmailConfirmed = true 
+                EmailConfirmed = true
             };
 
-            var result = await userManager.CreateAsync(adminUser, "Admin@123"); 
+            var result = await userManager.CreateAsync(adminUser, "Admin@123");
             if (result.Succeeded)
             {
                 await userManager.AddToRoleAsync(adminUser, "Admin");

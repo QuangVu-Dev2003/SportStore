@@ -12,12 +12,11 @@ import { AuthService } from '../../../features/auth/services/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  user: AppUser | null = null; // Khởi tạo user
+  user: AppUser | null = null;
 
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
-    // Lắng nghe user từ AuthService
     this.authService.user().subscribe({
       next: (response) => {
         this.user = response;
@@ -29,7 +28,13 @@ export class HeaderComponent implements OnInit {
   }
 
   onLogout(): void {
-    this.authService.logout(); // Gọi hàm logout
-    this.router.navigate(['/']); // Chuyển hướng về trang chủ
+    localStorage.removeItem('rememberedEmail');
+    localStorage.removeItem('rememberedPassword');
+    sessionStorage.removeItem('tempEmail');
+    sessionStorage.removeItem('tempPassword');
+    this.authService.logout();
+    this.router.navigate(['/']).then(() => {
+      window.location.reload();
+    });
   }
 }

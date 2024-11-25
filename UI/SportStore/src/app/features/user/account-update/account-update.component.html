@@ -1,103 +1,89 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-12 col-lg-10">
-            <!-- Back Button -->
             <div class="mb-4">
-                <a href="#" class="btn btn-outline-secondary">
-                    <i class="bi bi-arrow-left me-2"></i>Back to Profile
-                </a>
+                <button type="button" class="btn btn-outline-secondary" (click)="cancel()">
+                    <i class="bi bi-arrow-left me-2"></i>Quay lại hồ sơ
+                </button>
             </div>
-
-            <form>
-                <!-- Profile Header -->
-                <div class="account-section p-4 mb-4 text-center">
-                    <div class="image-upload mb-3">
-                        <img src="/api/placeholder/150/150" alt="Profile Picture" class="profile-image">
-                        <label for="profile-image" class="upload-icon">
-                            <i class="bi bi-camera-fill"></i>
-                        </label>
-                        <input type="file" id="profile-image" accept="image/*">
-                    </div>
-                    <div class="mb-3">
-                        <input type="text" class="form-control form-control-lg text-center" value="Jane Smith">
-                    </div>
-                    <p class="text-muted mb-3">Premium Member</p>
-                </div>
-
-                <div class="row g-4">
-                    <!-- Personal Information -->
-                    <div class="col-12 col-md-6">
+            <form (ngSubmit)="onSubmit()" #updateForm="ngForm" class="mb-4">
+                <div class="row">
+                    <div class="col-12 col-lg-12 col-md-6">
                         <div class="account-section p-4">
                             <h3 class="mb-4">
-                                <i class="bi bi-person-circle me-2"></i>Personal Information
+                                <i class="bi bi-person-circle me-2"></i>Thông tin cá nhân
                             </h3>
                             <div class="mb-4">
                                 <div class="mb-3">
-                                    <label class="form-label info-label">Email Address</label>
+                                    <label class="form-label info-label">Tên Họ</label>
                                     <div class="input-group">
                                         <span class="input-group-text">
-                                            <i class="bi bi-envelope"></i>
+                                            <i class="bi bi-person"></i>
                                         </span>
-                                        <input type="email" class="form-control" value="jane.smith@example.com">
+                                        <input type="text" class="form-control" name="firstName"
+                                            [(ngModel)]="user.firstName" #firstName="ngModel" minlength="2" required>
+                                    </div>
+                                    <div *ngIf="firstName.invalid && firstName.touched" class="text-danger">
+                                        <div *ngIf="firstName.errors?.['required']">Họ và tên là bắt buộc.</div>
+                                        <div *ngIf="firstName.errors?.['minlength']">Tên phải có ít nhất 2 ký tự.</div>
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label info-label">Phone Number</label>
+                                    <label class="form-label info-label">Tên chính</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">
+                                            <i class="bi bi-person"></i>
+                                        </span>
+                                        <input type="text" class="form-control" name="lastName"
+                                            [(ngModel)]="user.lastName" #lastName="ngModel" minlength="2" required>
+                                    </div>
+                                    <div *ngIf="lastName.invalid && lastName.touched" class="text-danger">
+                                        <div *ngIf="lastName.errors?.['required']">Họ và tên là bắt buộc.</div>
+                                        <div *ngIf="lastName.errors?.['minlength']">Tên phải có ít nhất 2 ký tự.</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label info-label">Số điện thoại</label>
                                     <div class="input-group">
                                         <span class="input-group-text">
                                             <i class="bi bi-telephone"></i>
                                         </span>
-                                        <input type="tel" class="form-control" value="+1 (555) 123-4567">
+                                        <input type="tel" class="form-control" name="phoneNumber"
+                                            [(ngModel)]="user.phoneNumber" #phoneNumber="ngModel" pattern="^[0-9]{10}$"
+                                            required>
+                                    </div>
+                                    <div *ngIf="phoneNumber.invalid && phoneNumber.touched" class="text-danger">
+                                        <div *ngIf="phoneNumber.errors?.['required']">Số điện thoại là bắt buộc.</div>
+                                        <div *ngIf="phoneNumber.errors?.['pattern']">Số điện thoại phải là số có 10 chữ
+                                            số.</div>
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label info-label">Address</label>
+                                    <label class="form-label info-label">Địa chỉ</label>
                                     <div class="input-group">
                                         <span class="input-group-text">
                                             <i class="bi bi-geo-alt"></i>
                                         </span>
-                                        <input type="text" class="form-control"
-                                            value="123 Main Street, Anytown, ST 12345">
+                                        <input type="text" class="form-control" name="address"
+                                            [(ngModel)]="user.address" #address="ngModel" minlength="2" required>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Account Details -->
-                    <div class="col-12 col-md-6">
-                        <div class="account-section p-4">
-                            <h3 class="mb-4">
-                                <i class="bi bi-shield-check me-2"></i>Account Details
-                            </h3>
-                            <div class="mb-4">
-                                <div class="mb-3">
-                                    <label class="form-label info-label">Account Type</label>
-                                    <select class="form-select">
-                                        <option>Basic</option>
-                                        <option selected>Premium</option>
-                                        <option>Enterprise</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label info-label">Member Since</label>
-                                    <input type="text" class="form-control" value="March 15, 2023" disabled>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label info-label">Last Login</label>
-                                    <input type="text" class="form-control" value="Today at 9:30 AM" disabled>
+                                    <div *ngIf="address.invalid && address.touched" class="text-danger">
+                                        <div *ngIf="address.errors?.['required']">Địa chỉ là bắt buộc.</div>
+                                        <div *ngIf="address.errors?.['minlength']">Địa chỉ có ít nhất 2 ký tự.</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Action Buttons -->
                 <div class="d-flex justify-content-end gap-2 mt-4">
-                    <button type="button" class="btn btn-outline-secondary">Cancel</button>
-                    <button type="submit" class="btn btn-primary">
-                        <i class="bi bi-check-lg me-2"></i>Save Changes
+                    <button type="button" class="btn btn-outline-secondary" (click)="cancel()">Hủy</button>
+                    <button type="submit" class="btn btn-primary" [disabled]="updateForm.invalid">
+                        <i class="bi bi-check-lg me-2"></i>Lưu
                     </button>
+                </div>
+                <div *ngIf="message" class="alert alert-danger mt-3">
+                    {{ message }}
                 </div>
             </form>
         </div>

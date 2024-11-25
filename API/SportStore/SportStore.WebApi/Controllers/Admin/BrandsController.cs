@@ -47,10 +47,20 @@ namespace SportStore.WebApi.Controllers.Admin
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> UpdateBrand(Guid id, [FromForm] BrandVm brandVm)
         {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(new { message = "Invalid data provided." });
+            }
 
             var updated = await _brandService.UpdateBrandAsync(id, brandVm);
-            return updated ? Ok("Cập nhật thành công") : NotFound("Không tìm thấy thương hiệu.");
+            if (updated)
+            {
+                return Ok(new { message = "Cập nhật thành công" });
+            }
+            else
+            {
+                return NotFound(new { message = "Không tìm thấy thương hiệu." });
+            }
         }
 
         [HttpDelete("delete-brand/{id}")]
@@ -58,7 +68,15 @@ namespace SportStore.WebApi.Controllers.Admin
         public async Task<IActionResult> DeleteBrand(Guid id)
         {
             var deleted = await _brandService.DeleteBrandAsync(id);
-            return deleted ? Ok("Xóa thành công") : NotFound("Không tìm thấy thương hiệu.");
+
+            if (deleted)
+            {
+                return Ok(new { message = "Xóa thành công" });
+            }
+            else
+            {
+                return NotFound(new { message = "Không tìm thấy thương hiệu." });
+            }
         }
     }
 }

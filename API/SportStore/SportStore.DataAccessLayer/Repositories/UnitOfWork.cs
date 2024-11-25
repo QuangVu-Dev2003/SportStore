@@ -13,6 +13,8 @@ namespace SportStore.DataAccessLayer.Repositories
         private IGenericRepository<CategoryModel> _categoryRepository;
         private IGenericRepository<BrandModel> _brandRepository;
         private IGenericRepository<AppUser> _userRepository;
+        private ICartRepository _cartRepository;
+        private IOrderRepository _orderRepository;
 
         public UnitOfWork(SportStoreDbContext context)
         {
@@ -40,6 +42,13 @@ namespace SportStore.DataAccessLayer.Repositories
         {
             get => _userRepository ??= new GenericRepository<AppUser>(_context);
         }
+
+        public IOrderRepository OrderRepository
+        {
+            get => _orderRepository ??= new OrderRepository(_context);
+        }
+
+        public ICartRepository CartRepository => new CartRepository(_context);
 
         public IGenericRepository<T> GenericRepository<T>() where T : class
         {

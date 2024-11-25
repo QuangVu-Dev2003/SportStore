@@ -1,97 +1,140 @@
+<div *ngIf="message" class="alert" [ngClass]="{'alert-success': isSuccess, 'alert-danger': !isSuccess}">
+    {{ message }}
+</div>
+
 <div class="container mb-4">
     <div class="row justify-content-center">
-        <div class="col-12 col-lg-10">
-            <!-- Profile Header -->
+        <div class="col-12 col-lg-10" *ngIf="user">
             <div class="account-section p-4 mb-4 text-center">
-                <img src="/api/placeholder/150/150" alt="Profile Picture" class="profile-image mb-3">
-                <h2 class="mb-1">Jane Smith</h2>
-                <p class="text-muted mb-3">Premium Member</p>
+                <div class="profile-image mb-3">
+                    <span class="profile-initials">
+                        {{ getInitials(user.firstName, user.lastName) }}
+                    </span>
+                </div>
+                <h2 class="mb-1">{{user.firstName}} {{user.lastName}}</h2>
+                <p class="text-muted mb-3">Tài khoản cơ bản</p>
                 <div class="d-flex justify-content-center gap-2">
-                    <button class="btn btn-primary">
-                        <i class="bi bi-pencil-square me-2"></i>Edit Profile
+                    <button class="btn btn-primary" (click)="UpdateProfile()">
+                        <i class="bi bi-pencil-square me-2"></i>Cập nhật thông tin
                     </button>
-                    <button class="btn btn-outline-secondary">
-                        <i class="bi bi-shield-lock me-2"></i>Change Password
+                    <button class="btn btn-outline-secondary" data-bs-toggle="modal"
+                        data-bs-target="#changePasswordModal">
+                        <i class="bi bi-shield-lock me-2"></i>Thay đổi mật khẩu
                     </button>
                 </div>
             </div>
 
-            <div class="row g-4">
-                <!-- Personal Information -->
-                <div class="col-12 col-md-6">
-                    <div class="account-section p-4">
-                        <h3 class="mb-4">
-                            <i class="bi bi-person-circle me-2"></i>Personal Information
-                        </h3>
-                        <div class="mb-4">
+            <div class="row">
+                <div class="col-12 col-md-6 mb-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
                             <div class="d-flex align-items-center mb-3">
-                                <div class="icon-container me-3">
+                                <div class="icon-container bg-primary text-white me-3">
                                     <i class="bi bi-envelope"></i>
                                 </div>
                                 <div>
-                                    <div class="info-label">Email Address</div>
-                                    <div class="info-value">jane.smithexample.com</div>
+                                    <h5 class="mb-1">Email</h5>
+                                    <p class="mb-0">{{user.email}}</p>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 mb-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
                             <div class="d-flex align-items-center mb-3">
-                                <div class="icon-container me-3">
+                                <div class="icon-container bg-primary text-white me-3">
                                     <i class="bi bi-telephone"></i>
                                 </div>
                                 <div>
-                                    <div class="info-label">Phone Number</div>
-                                    <div class="info-value">+1 (555) 123-4567</div>
+                                    <h5 class="mb-1">Số điện thoại</h5>
+                                    <p class="mb-0">{{user.phoneNumber || 'Not provided'}}</p>
                                 </div>
                             </div>
-                            <div class="d-flex align-items-center">
-                                <div class="icon-container me-3">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mb-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="icon-container bg-primary text-white me-3">
                                     <i class="bi bi-geo-alt"></i>
                                 </div>
                                 <div>
-                                    <div class="info-label">Address</div>
-                                    <div class="info-value">123 Main Street, Anytown, ST 12345</div>
+                                    <h5 class="mb-1">Địa chỉ</h5>
+                                    <p class="mb-0">{{user.address}}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-                <!-- Account Details -->
-                <div class="col-12 col-md-6">
-                    <div class="account-section p-4">
-                        <h3 class="mb-4">
-                            <i class="bi bi-shield-check me-2"></i>Account Details
-                        </h3>
-                        <div class="mb-4">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="icon-container me-3">
-                                    <i class="bi bi-star"></i>
-                                </div>
-                                <div>
-                                    <div class="info-label">Account Type</div>
-                                    <div class="info-value">Premium</div>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="icon-container me-3">
-                                    <i class="bi bi-calendar-check"></i>
-                                </div>
-                                <div>
-                                    <div class="info-label">Member Since</div>
-                                    <div class="info-value">March 15, 2023</div>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <div class="icon-container me-3">
-                                    <i class="bi bi-clock-history"></i>
-                                </div>
-                                <div>
-                                    <div class="info-label">Last Login</div>
-                                    <div class="info-value">Today at 9:30 AM</div>
-                                </div>
-                            </div>
+<div class="modal fade" id="changePasswordModal" tabindex="-1" aria-labelledby="changePasswordLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="changePasswordLabel">Thay đổi mật khẩu</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="changePasswordForm" (ngSubmit)="onChangePassword()">
+                    <div class="mb-3">
+                        <label for="oldPassword" class="form-label">Mật khẩu hiện tại</label>
+                        <div class="input-group">
+                            <input [type]="showOldPassword ? 'text' : 'password'" id="oldPassword"
+                                formControlName="oldPassword" class="form-control" />
+                            <button type="button" class="btn btn-outline-secondary"
+                                (click)="togglePasswordVisibility('oldPassword')">
+                                <i class="bi"
+                                    [ngClass]="{'bi-eye': !showOldPassword, 'bi-eye-slash': showOldPassword}"></i>
+                            </button>
+                        </div>
+                        <div *ngIf="changePasswordForm.get('oldPassword')?.touched && changePasswordForm.get('oldPassword')?.invalid"
+                            class="text-danger">
+                            Mật khẩu hiện tại là bắt buộc.
                         </div>
                     </div>
-                </div>
+                    <div class="mb-3">
+                        <label for="newPassword" class="form-label">Mật khẩu mới</label>
+                        <div class="input-group">
+                            <input [type]="showNewPassword ? 'text' : 'password'" id="newPassword"
+                                formControlName="newPassword" class="form-control" />
+                            <button type="button" class="btn btn-outline-secondary"
+                                (click)="togglePasswordVisibility('newPassword')">
+                                <i class="bi"
+                                    [ngClass]="{'bi-eye': !showNewPassword, 'bi-eye-slash': showNewPassword}"></i>
+                            </button>
+                        </div>
+                        <div *ngIf="changePasswordForm.get('newPassword')?.touched && changePasswordForm.get('newPassword')?.invalid"
+                            class="text-danger">
+                            Mật khẩu mới phải có ít nhất 6 ký tự.
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">Xác nhận mật khẩu</label>
+                        <div class="input-group">
+                            <input [type]="showConfirmPassword ? 'text' : 'password'" id="confirmPassword"
+                                formControlName="confirmPassword" class="form-control" />
+                            <button type="button" class="btn btn-outline-secondary"
+                                (click)="togglePasswordVisibility('confirmPassword')">
+                                <i class="bi"
+                                    [ngClass]="{'bi-eye': !showConfirmPassword, 'bi-eye-slash': showConfirmPassword}"></i>
+                            </button>
+                        </div>
+                        <div *ngIf="changePasswordForm.get('confirmPassword')?.touched && changePasswordForm.get('confirmPassword')?.invalid"
+                            class="text-danger">
+                            Passwords must match.
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100" [disabled]="changePasswordForm.invalid">Đổi mật
+                        khẩu</button>
+                </form>
             </div>
         </div>
     </div>

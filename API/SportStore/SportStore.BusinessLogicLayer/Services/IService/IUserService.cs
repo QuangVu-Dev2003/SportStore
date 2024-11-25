@@ -1,13 +1,15 @@
 ﻿using SportStore.BusinessLogicLayer.Services.Base;
+using SportStore.BusinessLogicLayer.ViewModels;
 using SportStore.DataAccessLayer.Models;
 
 namespace SportStore.BusinessLogicLayer.Services.IService
 {
     public interface IUserService : IBaseService<AppUser>
     {
-        // Normal User
+        // User
         Task<AppUser> GetCurrentUserAsync();
-        Task UpdateCurrentUserAsync(AppUser user);
+        //Task UpdateCurrentUserAsync(AppUser user);
+        Task UpdateCurrentUserAsync(UpdateProfile updateProfile);
         Task MarkForDeletionAsync();
         Task RestoreAccountAsync();
 

@@ -112,6 +112,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\categories\e3516057-1fd2-4dd3-ad48-4762bec4906b_Ao-khong-logo.png))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\products\5c07f74c-e90a-4717-996b-ede188e985ec_giay-bong-da.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>SportStore.WebApi</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/SportStore.WebApi</BasePath>
+      <RelativePath>img/products/5c07f74c-e90a-4717-996b-ede188e985ec_giay-bong-da.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\products\5c07f74c-e90a-4717-996b-ede188e985ec_giay-bong-da.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\products\92f00935-506e-444e-a0b7-4cff0d70e6fe_Screenshot 2024-11-04 153050.png))">
       <SourceType>Package</SourceType>
       <SourceId>SportStore.WebApi</SourceId>

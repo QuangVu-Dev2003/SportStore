@@ -5,14 +5,17 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { debounceTime, Subject } from 'rxjs';
 import { RouterLink } from '@angular/router';
+import { NgxPaginationModule } from 'ngx-pagination';
+import * as XLSX from 'xlsx';
 
 @Component({
   selector: 'app-brand-list',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterLink],
+  imports: [CommonModule, FormsModule, RouterLink, NgxPaginationModule],
   templateUrl: './brand-list.component.html',
   styleUrl: './brand-list.component.css',
 })
+
 
 export class BrandListComponent implements AfterViewInit, OnInit {
   @ViewChild('searchInput') searchInput!: ElementRef<HTMLInputElement>;
@@ -33,22 +36,27 @@ export class BrandListComponent implements AfterViewInit, OnInit {
   };
   selectedFile: File | null = null;
 
+
   BrandStatus = BrandStatus;
+
 
   constructor(private renderer: Renderer2, private brandService: BrandService) { }
 
+
   ngOnInit(): void {
     this.loadBrands();
+
 
     this.searchTerm$.pipe(debounceTime(300)).subscribe((term) => {
       this.searchTerm = term;
     });
   }
-
+  currentPage = 1;
   onSearchInput(event: Event): void {
     const target = event.target as HTMLInputElement;
-    this.searchTerm$.next(target.value);
+    this.searchTerm$.next(target.value.trim());
   }
+
 
   loadBrands(): void {
     this.isLoading = true;
@@ -64,6 +72,7 @@ export class BrandListComponent implements AfterViewInit, OnInit {
     );
   }
 
+
   filterBrands(): Brand[] {
     if (!this.searchTerm.trim()) {
       return this.brands;
@@ -73,15 +82,18 @@ export class BrandListComponent implements AfterViewInit, OnInit {
     );
   }
 
+
   viewBrand(brand: Brand): void {
     this.selectedBrand = brand;
     this.isModalOpen = true;
   }
 
+
   closeModal(): void {
     this.isModalOpen = false;
     this.selectedBrand = null;
   }
+
 
   isAddModalOpen: boolean = false;
   newBrandData: Brand = {
@@ -91,6 +103,7 @@ export class BrandListComponent implements AfterViewInit, OnInit {
     image: '',
     status: BrandStatus.Pending,
   };
+
 
   openAddModal(): void {
     this.isAddModalOpen = true;
@@ -103,20 +116,31 @@ export class BrandListComponent implements AfterViewInit, OnInit {
     };
   }
 
+
   closeAddModal(): void {
     this.isAddModalOpen = false;
   }
 
+
   addBrand(event: Event): void {
     event.preventDefault();
+    const duplicate = this.brands.some(
+      (brand) => brand.brandName.toLowerCase() === this.newBrandData.brandName.toLowerCase()
+    );
+    if (duplicate) {
+      alert('Brand name already exists!');
+      return;
+    }
     const formData = new FormData();
     formData.append('brandName', this.newBrandData.brandName);
     formData.append('description', this.newBrandData.description || '');
     formData.append('status', this.newBrandData.status);
 
+
     if (this.selectedFile) {
       formData.append('image', this.selectedFile, this.selectedFile.name);
     }
+
 
     this.brandService.createBrand(formData).subscribe(
       () => {
@@ -129,9 +153,11 @@ export class BrandListComponent implements AfterViewInit, OnInit {
     );
   }
 
+
   closeEditModal(): void {
     this.isEditModalOpen = false;
   }
+
 
   editBrand(brand: Brand): void {
     this.isEditModalOpen = true;
@@ -141,6 +167,7 @@ export class BrandListComponent implements AfterViewInit, OnInit {
     };
   }
 
+
   onFileSelected(event: Event): void {
     const input = event.target as HTMLInputElement;
     if (input.files?.length) {
@@ -148,8 +175,21 @@ export class BrandListComponent implements AfterViewInit, OnInit {
     }
   }
 
+
   updateBrand(event: Event): void {
     event.preventDefault();
+
+    // Check for duplicate brand name
+    const duplicate = this.brands.some(
+      (brand) =>
+        brand.brandName.toLowerCase() === this.editBrandData.brandName.toLowerCase()
+    );
+    if (duplicate) {
+      alert('Brand name already exists!');
+      return;
+    }
+
+    // Prepare form data
     const formData = new FormData();
     formData.append('brandName', this.editBrandData.brandName);
     formData.append('description', this.editBrandData.description || '');
@@ -159,16 +199,20 @@ export class BrandListComponent implements AfterViewInit, OnInit {
       formData.append('image', this.selectedFile, this.selectedFile.name);
     }
 
+    // Call the service to update the brand
     this.brandService.updateBrand(this.editBrandData.brandId, formData).subscribe(
       () => {
-        this.loadBrands();
-        this.closeEditModal();
+        this.loadBrands(); // Reload brand list
+        this.closeEditModal(); // Close the modal
+        window.location.reload(); // Reload the page
       },
       (error) => {
         console.error('Error updating brand:', error);
       }
     );
   }
+
+
 
   isDeleteModalOpen: boolean = false;
   isFinalConfirmation: boolean = false;
@@ -190,23 +234,30 @@ export class BrandListComponent implements AfterViewInit, OnInit {
     if (this.brandToDelete) {
       this.brandService.deleteBrand(this.brandToDelete.brandId).subscribe(
         () => {
-          this.loadBrands();
-          this.closeDeleteModal();
+          this.loadBrands(); // Refresh the list of brands
+          this.closeDeleteModal(); // Close the delete modal
           console.log('Brand deleted successfully');
+          window.location.reload(); // Reload the page
         },
         (error) => {
           console.error('Error deleting brand:', error);
-          this.closeDeleteModal();
+          alert('An error occurred while deleting the brand.');
+          this.closeDeleteModal(); // Close the delete modal even if there's an error
         }
       );
     }
   }
+
+
+
+
 
   ngAfterViewInit(): void {
     if (this.searchInput?.nativeElement) {
       this.renderer.listen(this.searchInput.nativeElement, 'input', () => {
         const searchValue = this.searchInput.nativeElement.value.toLowerCase();
         const rows = this.customerTable?.nativeElement.querySelectorAll('tbody tr') || [];
+
 
         rows.forEach((value: Element) => {
           const row = value as HTMLElement;
@@ -216,4 +267,24 @@ export class BrandListComponent implements AfterViewInit, OnInit {
       });
     }
   }
+
+  exportToExcel(): void {
+    const usersForExport = this.brands.map((brand) => ({
+      Brand_ID: brand.brandId,
+      Brand_Name: brand.brandName,
+      Description: brand.description,
+      IMG: brand.image,
+      status: brand.status
+    }));
+
+    const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(usersForExport);
+
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Users');
+
+    XLSX.writeFile(wb, 'users.xlsx');
+  }
 }
+
+
+

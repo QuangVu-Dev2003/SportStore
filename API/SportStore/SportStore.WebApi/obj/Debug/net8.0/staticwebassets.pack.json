@@ -1,35 +1,39 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.WebApi\\wwwroot\\img\\brands\\11179658-ba04-4e4c-9be2-feeae0e87c50_Screenshot 2024-11-04 153112.png",
+      "Id": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\wwwroot\\img\\brands\\11179658-ba04-4e4c-9be2-feeae0e87c50_Screenshot 2024-11-04 153112.png",
       "PackagePath": "staticwebassets\\img\\brands\\11179658-ba04-4e4c-9be2-feeae0e87c50_Screenshot 2024-11-04 153112.png"
     },
     {
-      "Id": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.WebApi\\wwwroot\\img\\brands\\7a8c4678-ddc5-4ad3-999b-ebf4c3118c29_ao-bong-da-nike.jpg",
+      "Id": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\wwwroot\\img\\brands\\7a8c4678-ddc5-4ad3-999b-ebf4c3118c29_ao-bong-da-nike.jpg",
       "PackagePath": "staticwebassets\\img\\brands\\7a8c4678-ddc5-4ad3-999b-ebf4c3118c29_ao-bong-da-nike.jpg"
     },
     {
-      "Id": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.WebApi\\wwwroot\\img\\brands\\9418a875-7749-434d-9c07-6f567f5fd0d0_Screenshot 2024-11-04 153112.png",
+      "Id": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\wwwroot\\img\\brands\\9418a875-7749-434d-9c07-6f567f5fd0d0_Screenshot 2024-11-04 153112.png",
       "PackagePath": "staticwebassets\\img\\brands\\9418a875-7749-434d-9c07-6f567f5fd0d0_Screenshot 2024-11-04 153112.png"
     },
     {
-      "Id": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.WebApi\\wwwroot\\img\\brands\\c654548d-1a9c-4de4-9c58-7c29136c4b01_Screenshot 2024-11-04 152514.png",
+      "Id": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\wwwroot\\img\\brands\\c654548d-1a9c-4de4-9c58-7c29136c4b01_Screenshot 2024-11-04 152514.png",
       "PackagePath": "staticwebassets\\img\\brands\\c654548d-1a9c-4de4-9c58-7c29136c4b01_Screenshot 2024-11-04 152514.png"
     },
     {
-      "Id": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.WebApi\\wwwroot\\img\\brands\\dc0380f7-39b6-4433-9cf7-c1c339c28bb9_ao-bong-da-adidas.jpg",
+      "Id": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\wwwroot\\img\\brands\\dc0380f7-39b6-4433-9cf7-c1c339c28bb9_ao-bong-da-adidas.jpg",
       "PackagePath": "staticwebassets\\img\\brands\\dc0380f7-39b6-4433-9cf7-c1c339c28bb9_ao-bong-da-adidas.jpg"
     },
     {
-      "Id": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.WebApi\\wwwroot\\img\\categories\\725d637b-4825-4b4b-84b6-44723ccda99a_Screenshot 2024-11-04 153221.png",
+      "Id": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\wwwroot\\img\\categories\\725d637b-4825-4b4b-84b6-44723ccda99a_Screenshot 2024-11-04 153221.png",
       "PackagePath": "staticwebassets\\img\\categories\\725d637b-4825-4b4b-84b6-44723ccda99a_Screenshot 2024-11-04 153221.png"
     },
     {
-      "Id": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.WebApi\\wwwroot\\img\\categories\\e3516057-1fd2-4dd3-ad48-4762bec4906b_Ao-khong-logo.png",
+      "Id": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\wwwroot\\img\\categories\\e3516057-1fd2-4dd3-ad48-4762bec4906b_Ao-khong-logo.png",
       "PackagePath": "staticwebassets\\img\\categories\\e3516057-1fd2-4dd3-ad48-4762bec4906b_Ao-khong-logo.png"
     },
     {
-      "Id": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.WebApi\\wwwroot\\img\\products\\92f00935-506e-444e-a0b7-4cff0d70e6fe_Screenshot 2024-11-04 153050.png",
+      "Id": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\wwwroot\\img\\products\\5c07f74c-e90a-4717-996b-ede188e985ec_giay-bong-da.jpg",
+      "PackagePath": "staticwebassets\\img\\products\\5c07f74c-e90a-4717-996b-ede188e985ec_giay-bong-da.jpg"
+    },
+    {
+      "Id": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\wwwroot\\img\\products\\92f00935-506e-444e-a0b7-4cff0d70e6fe_Screenshot 2024-11-04 153050.png",
       "PackagePath": "staticwebassets\\img\\products\\92f00935-506e-444e-a0b7-4cff0d70e6fe_Screenshot 2024-11-04 153050.png"
     },
     {

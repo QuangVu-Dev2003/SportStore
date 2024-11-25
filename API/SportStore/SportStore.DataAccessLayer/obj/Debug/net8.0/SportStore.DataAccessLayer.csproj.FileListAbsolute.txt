@@ -12,3 +12,18 @@ C:\Users\vunuo\OneDrive\Máy tính\Mock Project\API\SportStore\SportStore.DataAc
 C:\Users\vunuo\OneDrive\Máy tính\Mock Project\API\SportStore\SportStore.DataAccessLayer\obj\Debug\net8.0\SportStore.DataAccessLayer.pdb
 C:\Users\vunuo\OneDrive\Máy tính\Mock Project\API\SportStore\SportStore.DataAccessLayer\obj\Debug\net8.0\SportStore.DataAccessLayer.genruntimeconfig.cache
 C:\Users\vunuo\OneDrive\Máy tính\Mock Project\API\SportStore\SportStore.DataAccessLayer\obj\Debug\net8.0\ref\SportStore.DataAccessLayer.dll
+C:\Users\vunuo\OneDrive\Máy tính\projecttttt\SportStore\API\SportStore\SportStore.DataAccessLayer\bin\Debug\net8.0\SportStore.DataAccessLayer.deps.json
+C:\Users\vunuo\OneDrive\Máy tính\projecttttt\SportStore\API\SportStore\SportStore.DataAccessLayer\bin\Debug\net8.0\SportStore.DataAccessLayer.runtimeconfig.json
+C:\Users\vunuo\OneDrive\Máy tính\projecttttt\SportStore\API\SportStore\SportStore.DataAccessLayer\bin\Debug\net8.0\SportStore.DataAccessLayer.dll
+C:\Users\vunuo\OneDrive\Máy tính\projecttttt\SportStore\API\SportStore\SportStore.DataAccessLayer\bin\Debug\net8.0\SportStore.DataAccessLayer.pdb
+C:\Users\vunuo\OneDrive\Máy tính\projecttttt\SportStore\API\SportStore\SportStore.DataAccessLayer\obj\Debug\net8.0\SportStore.DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\vunuo\OneDrive\Máy tính\projecttttt\SportStore\API\SportStore\SportStore.DataAccessLayer\obj\Debug\net8.0\SportStore.DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vunuo\OneDrive\Máy tính\projecttttt\SportStore\API\SportStore\SportStore.DataAccessLayer\obj\Debug\net8.0\SportStore.DataAccessLayer.AssemblyInfoInputs.cache
+C:\Users\vunuo\OneDrive\Máy tính\projecttttt\SportStore\API\SportStore\SportStore.DataAccessLayer\obj\Debug\net8.0\SportStore.DataAccessLayer.AssemblyInfo.cs
+C:\Users\vunuo\OneDrive\Máy tính\projecttttt\SportStore\API\SportStore\SportStore.DataAccessLayer\obj\Debug\net8.0\SportStore.DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\vunuo\OneDrive\Máy tính\projecttttt\SportStore\API\SportStore\SportStore.DataAccessLayer\obj\Debug\net8.0\SportStore.DataAccessLayer.sourcelink.json
+C:\Users\vunuo\OneDrive\Máy tính\projecttttt\SportStore\API\SportStore\SportStore.DataAccessLayer\obj\Debug\net8.0\SportStore.DataAccessLayer.dll
+C:\Users\vunuo\OneDrive\Máy tính\projecttttt\SportStore\API\SportStore\SportStore.DataAccessLayer\obj\Debug\net8.0\refint\SportStore.DataAccessLayer.dll
+C:\Users\vunuo\OneDrive\Máy tính\projecttttt\SportStore\API\SportStore\SportStore.DataAccessLayer\obj\Debug\net8.0\SportStore.DataAccessLayer.pdb
+C:\Users\vunuo\OneDrive\Máy tính\projecttttt\SportStore\API\SportStore\SportStore.DataAccessLayer\obj\Debug\net8.0\SportStore.DataAccessLayer.genruntimeconfig.cache
+C:\Users\vunuo\OneDrive\Máy tính\projecttttt\SportStore\API\SportStore\SportStore.DataAccessLayer\obj\Debug\net8.0\ref\SportStore.DataAccessLayer.dll

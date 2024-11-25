@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product } from '../models/product.model';
 import { Observable } from 'rxjs';
@@ -39,7 +39,29 @@ export class ProductService {
     return this.http.get<Brand[]>(`${this.brandApiUrl}/get-all-brands`);
   }
 
+  getBrandById(brandId: string): Observable<Brand> {
+    return this.http.get<Brand>(`${this.apiUrl}/get-brand-by-id/${brandId}`);
+  }
+
   getAllCategories(): Observable<Category[]> {
     return this.http.get<Category[]>(`${this.categoryApiUrl}/get-all-categories`);
+  }
+
+  searchProducts(categoryNames?: string[], brandNames?: string[]): Observable<Product[]> {
+    let params = new HttpParams();
+
+    if (categoryNames && categoryNames.length > 0) {
+      categoryNames.forEach(category => {
+        params = params.append('categoryNames', category);
+      });
+    }
+
+    if (brandNames && brandNames.length > 0) {
+      brandNames.forEach(brand => {
+        params = params.append('brandNames', brand);
+      });
+    }
+
+    return this.http.get<Product[]>(`${this.apiUrl}/search`, { params });
   }
 }

@@ -12,8 +12,8 @@ using SportStore.DataAccessLayer.Data;
 namespace SportStore.DataAccessLayer.Migrations
 {
     [DbContext(typeof(SportStoreDbContext))]
-    [Migration("20241115142719_update")]
-    partial class update
+    [Migration("20241119134736_updateAppUser")]
+    partial class updateAppUser
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -166,6 +166,13 @@ namespace SportStore.DataAccessLayer.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<string>("AccountType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
@@ -183,6 +190,9 @@ namespace SportStore.DataAccessLayer.Migrations
                     b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime?>("LastLogin")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
@@ -190,6 +200,9 @@ namespace SportStore.DataAccessLayer.Migrations
                         .HasColumnType("bit");
 
                     b.Property<DateTime?>("LockoutEnd")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("MemberSince")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("NormalizedEmail")
@@ -202,6 +215,9 @@ namespace SportStore.DataAccessLayer.Migrations
 
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Phone")
+                        .HasColumnType("int");
 
                     b.Property<string>("PhoneNumber")
                         .HasColumnType("nvarchar(max)");

@@ -5,7 +5,7 @@
 namespace SportStore.DataAccessLayer.Migrations
 {
     /// <inheritdoc />
-    public partial class update : Migration
+    public partial class UpdatedDbContext : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

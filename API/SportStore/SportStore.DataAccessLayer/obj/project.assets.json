@@ -4879,11 +4879,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj",
+      "projectUniqueName": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj",
       "projectName": "SportStore.DataAccessLayer",
-      "projectPath": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj",
+      "projectPath": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj",
       "packagesPath": "C:\\Users\\vunuo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\Mock Project\\API\\SportStore\\SportStore.DataAccessLayer\\obj\\",
+      "outputPath": "C:\\Users\\vunuo\\OneDrive\\Máy tính\\projecttttt\\SportStore\\API\\SportStore\\SportStore.DataAccessLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vunuo\\AppData\\Roaming\\NuGet\\NuGet.Config",

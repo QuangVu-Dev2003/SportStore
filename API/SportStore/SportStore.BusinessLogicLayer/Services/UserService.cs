@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SportStore.BusinessLogicLayer.Services.Base;
 using SportStore.BusinessLogicLayer.Services.IService;
+using SportStore.BusinessLogicLayer.ViewModels;
 using SportStore.DataAccessLayer.Models;
 using SportStore.DataAccessLayer.Repositories.IRepository;
 using System.Security.Claims;
@@ -42,29 +43,68 @@ namespace SportStore.BusinessLogicLayer.Services
             return await _userManager.FindByIdAsync(userId);
         }
 
-        public async Task UpdateCurrentUserAsync(AppUser user)
+        public async Task UpdateCurrentUserAsync(UpdateProfile updateProfile)
         {
             var currentUser = await GetCurrentUserAsync();
-            if (currentUser.Id == user.Id)
+            if (currentUser == null)
             {
-                await _userManager.UpdateAsync(user);
+                throw new Exception("Người dùng hiện tại không tồn tại.");
             }
-            else
+
+            if (!string.IsNullOrEmpty(updateProfile.FirstName))
             {
-                throw new UnauthorizedAccessException("Không thể cập nhật tài khoản của người dùng khác.");
+                currentUser.FirstName = updateProfile.FirstName;
+            }
+            if (!string.IsNullOrEmpty(updateProfile.LastName))
+            {
+                currentUser.LastName = updateProfile.LastName;
+            }
+            if (!string.IsNullOrEmpty(updateProfile.Address))
+            {
+                currentUser.Address = updateProfile.Address;
+            }
+            if (!string.IsNullOrEmpty(updateProfile.PhoneNumber))
+            {
+                currentUser.PhoneNumber = updateProfile.PhoneNumber;
+            }
+            var result = await _userManager.UpdateAsync(currentUser);
+            if (!result.Succeeded)
+            {
+                throw new Exception("Cập nhật không thành công: " + string.Join(", ", result.Errors.Select(e => e.Description)));
             }
         }
 
         public async Task MarkForDeletionAsync()
         {
-            var user = await GetCurrentUserAsync();
-            await UpdateCurrentUserAsync(user);
+            var currentUser = await GetCurrentUserAsync();
+            if (currentUser == null)
+            {
+                throw new UnauthorizedAccessException("Không xác định được người dùng.");
+            }
+
+            currentUser.IsDeleted = true;
+            currentUser.DeletionDate = DateTime.UtcNow;
+
+            var result = await _userManager.UpdateAsync(currentUser);
+            if (!result.Succeeded)
+            {
+                throw new Exception("Đánh dấu tài khoản xóa không thành công: " + string.Join(", ", result.Errors.Select(e => e.Description)));
+            }
         }
 
         public async Task RestoreAccountAsync()
         {
             var user = await GetCurrentUserAsync();
-            await UpdateCurrentUserAsync(user);
+            if (user == null)
+                throw new Exception("Không tìm thấy người dùng.");
+
+            user.IsDeleted = false;
+            user.DeletionDate = null;
+            var result = await _userManager.UpdateAsync(user);
+            if (!result.Succeeded)
+            {
+                throw new Exception("Khôi phục tài khoản không thành công: " + string.Join(", ", result.Errors.Select(e => e.Description)));
+            }
         }
 
         // Admin
@@ -144,4 +184,3 @@ namespace SportStore.BusinessLogicLayer.Services
         }
     }
 }
-

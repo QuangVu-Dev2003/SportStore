@@ -1,5 +1,72 @@
 [
   {
+    "ContainingType": "SportStore.WebApi.Controllers.Admin.AdminOrdersController",
+    "Method": "GetAllOrders",
+    "RelativePath": "api/AdminOrders",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[SportStore.BusinessLogicLayer.ViewModels.OrderVm, SportStore.BusinessLogicLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SportStore.WebApi.Controllers.Admin.AdminOrdersController",
+    "Method": "GetOrderById",
+    "RelativePath": "api/AdminOrders/{orderId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SportStore.BusinessLogicLayer.ViewModels.OrderVm",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SportStore.WebApi.Controllers.Admin.AdminOrdersController",
+    "Method": "UpdateOrderStatus",
+    "RelativePath": "api/AdminOrders/{orderId}/update-status",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateStatusVm",
+        "Type": "SportStore.BusinessLogicLayer.ViewModels.UpdateOrderStatusVm",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SportStore.WebApi.Controllers.Admin.AdminUserController",
     "Method": "LockUser",
     "RelativePath": "api/AdminUser/{id}/lock",
@@ -330,6 +397,90 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "SportStore.WebApi.Controllers.CartsController",
+    "Method": "ClearCart",
+    "RelativePath": "api/Carts/{userId}/clear",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SportStore.WebApi.Controllers.CartsController",
+    "Method": "AddToCart",
+    "RelativePath": "api/Carts/add-to-cart/{userId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "cartItem",
+        "Type": "SportStore.BusinessLogicLayer.ViewModels.CartItemVm",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SportStore.WebApi.Controllers.CartsController",
+    "Method": "GetCartItems",
+    "RelativePath": "api/Carts/get-cart/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[SportStore.BusinessLogicLayer.ViewModels.CartItemVm, SportStore.BusinessLogicLayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SportStore.WebApi.Controllers.CartsController",
+    "Method": "RemoveFromCart",
+    "RelativePath": "api/Carts/remove-from-cart/{userId}/{productId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "productId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SportStore.WebApi.Controllers.Admin.CategoriesController",
     "Method": "CreateCategory",
     "RelativePath": "api/Categories/create-category",
@@ -605,6 +756,27 @@
   },
   {
     "ContainingType": "SportStore.WebApi.Controllers.Admin.ProductsController",
+    "Method": "SearchProducts",
+    "RelativePath": "api/products/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "categoryNames",
+        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "brandNames",
+        "Type": "System.Collections.Generic.List\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SportStore.WebApi.Controllers.Admin.ProductsController",
     "Method": "UpdateProduct",
     "RelativePath": "api/products/update/{id}",
     "HttpMethod": "PUT",
@@ -681,6 +853,32 @@
   },
   {
     "ContainingType": "SportStore.WebApi.Controllers.UserController",
+    "Method": "GetAccountStatus",
+    "RelativePath": "api/User/account-status",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SportStore.WebApi.Controllers.UserController",
+    "Method": "ChangePassword",
+    "RelativePath": "api/User/change-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "SportStore.WebApi.ViewModels.ChangePasswordVm",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SportStore.WebApi.Controllers.UserController",
     "Method": "MarkForDeletion",
     "RelativePath": "api/User/mark-for-deletion",
     "HttpMethod": "POST",
@@ -718,12 +916,80 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "userUpdate",
-        "Type": "SportStore.DataAccessLayer.Models.AppUser",
+        "Name": "updateProfile",
+        "Type": "SportStore.BusinessLogicLayer.ViewModels.UpdateProfile",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SportStore.WebApi.Controllers.UserOrdersController",
+    "Method": "GetOrderById",
+    "RelativePath": "api/UserOrders/{orderId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SportStore.BusinessLogicLayer.ViewModels.OrderVm",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "SportStore.WebApi.Controllers.UserOrdersController",
+    "Method": "CancelOrder",
+    "RelativePath": "api/UserOrders/{orderId}/cancel",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SportStore.WebApi.Controllers.UserOrdersController",
+    "Method": "PlaceOrder",
+    "RelativePath": "api/UserOrders/checkout",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "orderVm",
+        "Type": "SportStore.BusinessLogicLayer.ViewModels.OrderVm",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "SportStore.BusinessLogicLayer.ViewModels.OrderVm",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "SportStore.WebApi.Controllers.WeatherForecastController",

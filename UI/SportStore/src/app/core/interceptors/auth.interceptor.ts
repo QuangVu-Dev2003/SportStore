@@ -5,7 +5,7 @@ import { tap } from 'rxjs';
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const cookieService = inject(CookieService);
-  const authToken = cookieService.get('Authentication'); // Lấy token từ CookieService
+  const authToken = cookieService.get('Authentication');
 
   console.log('AuthInterceptor - Token:', authToken);
   console.log('AuthInterceptor - Request URL:', req.url);
