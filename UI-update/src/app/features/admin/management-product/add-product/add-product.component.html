@@ -1,0 +1,120 @@
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="breadcrumb-content">
+            <ul>
+                <li><a [routerLink]="['/']">Trang chủ</a></li>
+                <li class="active"><a [routerLink]="['/admin']">Admin</a></li>
+                <li class="active"><a [routerLink]="['/admin/management-product']">Quản Lý Sản Phẩm</a></li>
+                <li class="active">Thêm Sản Phẩm</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container mt-5 mb-4">
+    <div class="card shadow">
+        <div class="card-header text-white" style="background-color: #fed700;">
+            <h3 class="mb-0">Thêm Sản Phẩm</h3>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="productForm" (ngSubmit)="submitForm()">
+                <div class="mb-3">
+                    <label for="productName" class="form-label fw-bold">Tên Sản Phẩm</label>
+                    <input type="text" id="productName" class="form-control" formControlName="productName"
+                        placeholder="Nhập tên sản phẩm" required />
+                    <div *ngIf="productForm.get('productName')?.touched && productForm.get('productName')?.invalid"
+                        class="text-danger">
+                        Tên sản phẩm là bắt buộc.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label fw-bold">Mô Tả</label>
+                    <textarea id="description" class="form-control" formControlName="description" rows="3"
+                        placeholder="Nhập mô tả sản phẩm"></textarea>
+                    <div *ngIf="productForm.get('description')?.touched && productForm.get('description')?.invalid"
+                        class="text-danger">
+                        Mô tả là bắt buộc.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="detail" class="form-label fw-bold">Chi Tiết</label>
+                    <textarea id="detail" class="form-control" formControlName="detail" rows="3"
+                        placeholder="Nhập chi tiết sản phẩm"></textarea>
+                    <div *ngIf="productForm.get('detail')?.touched && productForm.get('detail')?.invalid"
+                        class="text-danger">
+                        Chi tiết là bắt buộc.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label fw-bold">Giá</label>
+                    <input type="number" id="price" class="form-control" formControlName="price"
+                        placeholder="Nhập giá sản phẩm" required />
+                    <div *ngIf="productForm.get('price')?.touched && productForm.get('price')?.invalid"
+                        class="text-danger">
+                        Giá sản phẩm là bắt buộc và phải lớn hơn hoặc bằng 0.
+                    </div>
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="instock" class="form-label fw-bold">Số Lượng</label>
+                    <input type="number" id="instock" class="form-control" formControlName="instock"
+                        placeholder="Nhập số lượng sản phẩm" required />
+                    <div *ngIf="productForm.get('instock')?.touched && productForm.get('instock')?.invalid"
+                        class="text-danger">
+                        Số lượng là bắt buộc và phải lớn hơn hoặc bằng 0.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="addDate" class="form-label fw-bold">Ngày Thêm</label>
+                    <input type="date" id="addDate" class="form-control" formControlName="addDate" required />
+                    <div *ngIf="productForm.get('addDate')?.touched && productForm.get('addDate')?.invalid"
+                        class="text-danger">
+                        Ngày thêm là bắt buộc.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="status" class="form-label fw-bold">Trạng Thái</label>
+                    <select id="status" class="form-select" formControlName="status">
+                        <option value="0">Còn Hàng</option>
+                        <option value="1">Đang Nhập Hàng</option>
+                        <option value="2">Hết Hàng</option>
+                        <option value="3">Ngừng Bán</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label fw-bold">Ảnh</label>
+                    <input type="file" id="image" class="form-control" (change)="onFileSelected($event)" multiple />
+                </div>
+                <div class="mb-3">
+                    <label for="brandId" class="form-label fw-bold">Nhãn Hiệu</label>
+                    <select id="brandId" class="form-select" formControlName="brandId">
+                        <option *ngFor="let brand of brands" [value]="brand.brandId">
+                            {{ brand.brandName }}
+                        </option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="categoryIds" class="form-label fw-bold">Danh Mục</label>
+                    <select id="categoryIds" class="form-select" (change)="onCategoryChange($event)" multiple>
+                        <option *ngFor="let category of categories" [value]="category.categoryId"
+                            [selected]="productForm.value.categoryIds?.includes(category.categoryId)">
+                            {{ category.categoryName }}
+                        </option>
+                    </select>
+                    <div *ngIf="productForm.get('categoryIds')?.touched && productForm.get('categoryIds')?.invalid"
+                        class="text-danger">
+                        Vui lòng chọn ít nhất một danh mục.
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary me-2" [disabled]="productForm.invalid">
+                        Thêm
+                    </button>
+                    <a type="button" class="btn btn-secondary" [routerLink]="['/admin/management-product']">
+                        Hủy
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

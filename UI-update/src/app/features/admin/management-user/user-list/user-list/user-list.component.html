@@ -1,0 +1,113 @@
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="breadcrumb-content">
+            <ul>
+                <li><a [routerLink]="['/']">Trang chủ</a></li>
+                <li class="active"><a [routerLink]="['/admin']">Admin</a></li>
+                <li class="active">Quản Lý Người Dùng</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container mt-4">
+    <h2 class="mb-4">Quản Lý Người Dùng</h2>
+    <div *ngIf="users.length > 0">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="input-group w-50">
+                <input type="text" #searchInput class="form-control" placeholder="Tìm kiếm..."
+                    (input)="onSearchInput($event)" />
+                <button class="btn btn-outline-secondary" id="btn-search">
+                    <i class="bi bi-search"></i>
+                </button>
+            </div>
+            <div>
+                <button class="btn btn-success" id="btn-export" (click)="exportToExcel()"><i
+                        class="bi bi-file-earmark-excel"></i>
+                    Export Excel</button>
+            </div>
+        </div>
+        <table class="table table-bordered table-hover" #userTable>
+            <thead class="thead-light">
+                <tr>
+                    <th>#</th>
+                    <th>ID</th>
+                    <th>Tên</th>
+                    <th>Email</th>
+                    <th>Địa Chỉ</th>
+                    <th>SDT</th>
+                    <th>Roles</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of filterUser(); let i = index">
+                    <td>{{ (currentPage - 1) * itemsPerPage + i + 1 }}</td>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.firstName}} {{user.lastName}}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.address }}</td>
+                    <td>{{ user.phoneNumber }}</td>
+                    <td>
+                        <span *ngFor="let role of roles[user.id]; let last = last">{{ role }}<span *ngIf="!last">,
+                            </span></span>
+                        <div class="roles-container">
+                            <div class="role-selector mt-2 d-flex align-items-center">
+                                <select [(ngModel)]="selectedRoles[user.id]" class="form-select me-2"
+                                    style="width: 150px;">
+                                    <option value="Admin">Admin</option>
+                                    <option value="User">User</option>
+                                </select>
+                                <button class="btn btn-primary btn-sm"
+                                    (click)="openAuthModal(user.id, selectedRoles[user.id])">
+                                    <i class="bi bi-plus-circle"></i> Thêm
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <nav aria-label="Pagination" *ngIf="totalItems > itemsPerPage">
+            <ul class="pagination justify-content-center">
+                <li class="page-item" *ngIf="currentPage > 1">
+                    <button class="page-link" (click)="changePage(currentPage - 1)">
+                        Previous
+                    </button>
+                </li>
+                <li class="page-item" *ngFor="let page of totalPages" [class.active]="currentPage === page">
+                    <button class="page-link" (click)="changePage(page)">
+                        {{ page }}
+                    </button>
+                </li>
+                <li class="page-item" *ngIf="currentPage < totalPages.length">
+                    <button class="page-link" (click)="changePage(currentPage + 1)">
+                        Next
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+<div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="authModalLabel">Xác Thực Lại Tài Khoản</h5>
+            </div>
+            <div class="modal-body">
+                <form (ngSubmit)="confirmAuthentication()" #authForm="ngForm">
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Mật khẩu:</label>
+                        <input type="password" id="password" class="form-control" [(ngModel)]="password" name="password"
+                            required />
+                    </div>
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-primary" [disabled]="!authForm.form.valid">Xác
+                            nhận</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

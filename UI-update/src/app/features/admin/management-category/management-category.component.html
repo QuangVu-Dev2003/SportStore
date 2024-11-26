@@ -1,0 +1,197 @@
+<div class="breadcrumb-area">
+    <div class="container">
+        <div class="breadcrumb-content">
+            <ul>
+                <li><a [routerLink]="['/']">Trang chủ</a></li>
+                <li class="active"><a [routerLink]="['/admin']">Admin</a></li>
+                <li class="active">Quản Lý Danh Mục</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container mt-4">
+    <h2 class="mb-4">Quản Lý Danh Mục</h2>
+    <div *ngIf="categories.length > 0">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="input-group w-50">
+                <input type="text" #searchInput class="form-control" placeholder="Tìm kiếm..."
+                    (input)="onSearchInput($event)" />
+                <button class="btn btn-outline-secondary" id="btn-search">
+                    <i class="bi bi-search"></i>
+                </button>
+            </div>
+            <div>
+                <button class="btn btn-primary me-3" id="btn-add" (click)="openAddModal()"><i
+                        class="bi bi-plus-circle"></i> Thêm danh mục</button>
+                <button class="btn btn-success" id="btn-export" (click)="exportToExcel()"><i
+                        class="bi bi-file-earmark-excel"></i>
+                    Export Excel</button>
+            </div>
+        </div>
+        <table class="table table-bordered table-hover" #customerTable>
+            <thead class="thead-light">
+                <tr>
+                    <th>#</th>
+                    <th>Tên</th>
+                    <th>Ảnh</th>
+                    <th>Mô tả</th>
+                    <th>Trạng thái</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr
+                    *ngFor="let category of filterCategories() | paginate: { itemsPerPage: 5, currentPage: currentPage }; let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ category.categoryName }}</td>
+                    <td>
+                        <img *ngIf="category.image" [src]="category.image" alt="{{ category.categoryName }}"
+                            style="max-width: 100px;" />
+                        <span *ngIf="!category.image">Không có ảnh</span>
+                    </td>
+                    <td>{{ category.description || 'Không có mô tả' }}</td>
+                    <td>{{ category.status }}</td>
+                    <td>
+                        <button class="btn btn-info btn-sm me-1" (click)="viewCategory(category)">
+                            <i class="bi bi-eye"></i> View
+                        </button>
+                        <button class="btn btn-warning btn-sm me-1" (click)="editCategory(category)">
+                            <i class="bi bi-pencil"></i> Edit
+                        </button>
+                        <button class="btn btn-danger btn-sm" (click)="openDeleteModal(category)">
+                            <i class="bi bi-trash"></i> Delete
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="!isLoading && categories.length === 0">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+                <button class="btn btn-primary me-3" id="btn-add" (click)="openAddModal()"><i
+                        class="bi bi-plus-circle"></i>
+                    Thêm danh mục</button>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!isLoading && categories.length === 0">Không có Danh Mục nào.</div>
+
+
+    <!-- Modal Popup -->
+    <div *ngIf="isModalOpen" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{{ selectedCategory?.categoryName }}</h5>
+                <button type="button" class="btn-close" aria-label="Close" (click)="closeModal()"></button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Mô tả:</strong> {{ selectedCategory?.description || 'Không có mô tả' }}</p>
+                <p><strong>Trạng thái:</strong> {{ selectedCategory?.status }}</p>
+                <img *ngIf="selectedCategory?.image" [src]="selectedCategory?.image" alt="Brand Image"
+                    class="img-fluid" />
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal-overlay" *ngIf="isAddModalOpen">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Thêm Danh Mục Mới</h5>
+                <button type="button" class="btn-close" aria-label="Close" (click)="closeAddModal()"></button>
+            </div>
+            <div class="modal-body">
+                <form (ngSubmit)="addCategory($event)">
+                    <div class="mb-3">
+                        <label for="newBrandName" class="form-label">Tên Danh Mục</label>
+                        <input type="text" id="newBrandName" class="form-control"
+                            [(ngModel)]="newCategoryData.categoryName" name="newBrandName" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="newDescription" class="form-label">Mô Tả</label>
+                        <textarea id="newDescription" class="form-control" [(ngModel)]="newCategoryData.description"
+                            name="newDescription"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="newStatus" class="form-label">Trạng Thái</label>
+                        <select id="newStatus" class="form-select" [(ngModel)]="newCategoryData.status" name="newStatus"
+                            required>
+                            <option [ngValue]="CategoryStatus.Pending">Đợi xác nhận</option>
+                            <option [ngValue]="CategoryStatus.Open">Mở</option>
+                            <option [ngValue]="CategoryStatus.Closed">Đóng</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="newImage" class="form-label">Ảnh</label>
+                        <input type="file" id="newImage" class="form-control" (change)="onFileSelected($event)" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Thêm</button>
+                    <button type="button" class="btn btn-secondary" (click)="closeAddModal()">Hủy</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal-overlay" *ngIf="isEditModalOpen">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Chỉnh sửa Danh Mục</h5>
+                <button type="button" class="btn-close" aria-label="Close" (click)="closeEditModal()"></button>
+            </div>
+            <div class="modal-body">
+                <form (ngSubmit)="updateBrand($event)">
+                    <div class="mb-3">
+                        <label for="brandName" class="form-label">Tên Danh Mục</label>
+                        <input type="text" id="brandName" class="form-control"
+                            [(ngModel)]="editCategoryData.categoryName" name="brandName" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Mô Tả</label>
+                        <textarea id="description" class="form-control" [(ngModel)]="editCategoryData.description"
+                            name="description"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="status" class="form-label">Trạng Thái</label>
+                        <select id="status" class="form-select" [(ngModel)]="editCategoryData.status" name="status"
+                            required>
+                            <option [ngValue]="CategoryStatus.Pending">Đợi xác nhận</option>
+                            <option [ngValue]="CategoryStatus.Open">Mở</option>
+                            <option [ngValue]="CategoryStatus.Closed">Đóng</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="image" class="form-label">Ảnh</label>
+                        <input type="file" id="image" class="form-control" (change)="onFileSelected($event)" />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Cập Nhật</button>
+                    <button type="button" class="btn btn-secondary" (click)="closeEditModal()">Hủy</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal-overlay" *ngIf="isDeleteModalOpen">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Xác nhận</h5>
+                <button type="button" class="btn-close" aria-label="Close" (click)="closeDeleteModal()"></button>
+            </div>
+            <div class="modal-body">
+                <p *ngIf="!isFinalConfirmation">Bạn có chắc chắn muốn xóa Danh Mục này không?</p>
+                <p *ngIf="isFinalConfirmation">Bạn có thực sự muốn xóa? Hành động này không thể hoàn tác.</p>
+            </div>
+            <div class="modal-footer">
+                <button *ngIf="!isFinalConfirmation" class="btn btn-primary" (click)="proceedToFinalConfirmation()">
+                    Xác nhận</button>
+                <button *ngIf="isFinalConfirmation" class="btn btn-danger" (click)="confirmDelete()">Xóa</button>
+                <button class="btn btn-secondary" (click)="closeDeleteModal()">Hủy</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<pagination-controls class="custom-pagination text-center" (pageChange)="currentPage = $event">
+</pagination-controls>

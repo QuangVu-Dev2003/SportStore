@@ -1,0 +1,50 @@
+<div class="footer">
+    <div class="footer-static-middle">
+        <div class="container">
+            <div class="footer-logo-wrap pt-50 pb-35">
+                <div class="row">
+                    <div class="col-lg-5 col-md-6">
+                        <div class="footer-logo">
+                            <img src="/assets/images/menu/logo/1.jpg" alt="Footer Logo">
+                            <p class="info">Đẩy mạnh giới hạn, phá vỡ rào cản, hợp tác để thành công!</p>
+                        </div>
+                        <ul class="des">
+                            <li>
+                                <span>Địa chỉ: </span>
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.575932761084!2d105.53245687749697!3d21.00962943852758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31345bb76aaeaebb%3A0xda7258a482e25868!2sFPT%20F-Ville%202!5e0!3m2!1sen!2s!4v1732516061673!5m2!1sen!2s"
+                                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </li>
+                            <li>
+                                <span>Số điện thoại: </span>
+                                <a href="#">(+84) 999-999-999</a>
+                            </li>
+                            <li>
+                                <span>Email: </span>
+                                <a href="mailto://vunuong003@gmail.com">admin.newbie&#64;info.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="footer-block">
+                            <h3 class="footer-block-title">Danh Mục</h3>
+                            <ul>
+                                <li *ngFor="let category of categories"><a href="/shop">{{category.categoryName}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6">
+                        <div class="footer-block">
+                            <h3 class="footer-block-title">Thương Hiệu</h3>
+                            <ul>
+                                <li *ngFor="let brand of brands"><a href="/shop">{{brand.brandName}}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
