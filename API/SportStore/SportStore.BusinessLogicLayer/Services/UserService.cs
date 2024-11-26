@@ -182,5 +182,28 @@ namespace SportStore.BusinessLogicLayer.Services
                 await _userManager.AddToRoleAsync(user, roleName);
             }
         }
+
+        public async Task<IEnumerable<string>> GetUserRolesAsync(string userId)
+        {
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                throw new Exception("Không tìm thấy người dùng.");
+            }
+
+            var roles = await _userManager.GetRolesAsync(user);
+            return roles;
+        }
+
+        public async Task<bool> ValidateUserCredentialsAsync(string username, string password)
+        {
+            var user = await _userManager.FindByNameAsync(username);
+            if (user == null)
+            {
+                return false;
+            }
+
+            return await _userManager.CheckPasswordAsync(user, password);
+        }
     }
 }

@@ -55,7 +55,7 @@ namespace SportStore.BusinessLogicLayer.Services
                 await _unitOfWork.OrderRepository.AddAsync(order);
 
                 var subject = "Xác nhận đơn hàng";
-                var body = $"Đơn hàng của bạn đã được đặt thành công và đang chờ xem xét. ID đơn hàng: {order.OrderId}";
+                var body = $"Đơn hàng của bạn đã được đặt thành công và đang chờ xem xét. <a href='http://localhost:4200/orders/{order.OrderId}'>Xem đơn hàng của bạn tại đây</a>";
                 await _emailSender.SendEmailAsync(user.Email, subject, body);
                
                 await _cartService.ClearCartAsync(userId);
@@ -136,6 +136,7 @@ namespace SportStore.BusinessLogicLayer.Services
             return true;
         }
 
+        // Kiểm tra xem đơn hàng có thể hủy được không
         public async Task<bool> CanCancelOrderAsync(Guid orderId, string userId)
         {
             var order = await _unitOfWork.OrderRepository.GetOrderByIdAsync(orderId, userId);

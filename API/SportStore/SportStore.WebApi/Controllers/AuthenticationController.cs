@@ -106,7 +106,7 @@ namespace SportStore.WebApi.Controllers
 
             if (user == null)
             {
-                return BadRequest("Email không tồn tại.");
+                return BadRequest(new { message = "Email không tồn tại." });
             }
 
             if (user.IsDeleted)
@@ -148,76 +148,6 @@ namespace SportStore.WebApi.Controllers
             var tokenValue = await GenerateJWTToken(user);
             return Ok(tokenValue);
         }
-
-        //[HttpPost("login-user")]
-        //public async Task<IActionResult> Login([FromBody] LoginVm loginVm)
-        //{
-        //    var user = await _userManager.FindByEmailAsync(loginVm.Email);
-
-        //    if (user == null)
-        //    {
-        //        return BadRequest(new { message = "Email không tồn tại." });
-        //    }
-
-        //    if (user.IsDeleted)
-        //    {
-        //        return BadRequest(new { message = "Tài khoản của bạn đang bị xóa. Vui lòng khôi phục tài khoản để tiếp tục sử dụng." });
-        //    }
-
-        //    if (!user.EmailConfirmed)
-        //    {
-        //        return BadRequest(new { message = "Email chưa được xác nhận. Vui lòng xác nhận email trước khi đăng nhập." });
-        //    }
-
-        //    // Check if the account is locked
-        //    if (user.LockoutEnd.HasValue && user.LockoutEnd > DateTime.UtcNow)
-        //    {
-        //        var lockoutTimeRemaining = user.LockoutEnd.Value - DateTime.UtcNow;
-
-        //        // Send the lockout time in seconds for front-end countdown
-        //        return BadRequest(new
-        //        {
-        //            message = $"Tài khoản của bạn đã bị khóa. Vui lòng thử lại sau {lockoutTimeRemaining.TotalMinutes} phút.",
-        //            failedAttempts = user.FailedLoginAttempts,
-        //            remainingLockoutTime = lockoutTimeRemaining.TotalSeconds // Remaining time in seconds
-        //        });
-        //    }
-
-        //    bool isPasswordValid = await _userManager.CheckPasswordAsync(user, loginVm.Password);
-        //    if (!isPasswordValid)
-        //    {
-        //        user.FailedLoginAttempts++;
-
-        //        if (user.FailedLoginAttempts >= 5)
-        //        {
-        //            user.LockoutEnd = DateTime.UtcNow.AddMinutes(5);
-        //            await _userManager.UpdateAsync(user);
-
-        //            return BadRequest(new
-        //            {
-        //                message = $"Tài khoản của bạn đã bị khóa. Vui lòng thử lại sau 5 phút.",
-        //                failedAttempts = user.FailedLoginAttempts,
-        //                remainingLockoutTime = 5 * 60 // Lockout is 5 minutes, return 300 seconds
-        //            });
-        //        }
-
-        //        await _userManager.UpdateAsync(user);
-        //        return BadRequest(new
-        //        {
-        //            message = $"Bạn đã nhập sai mật khẩu {user.FailedLoginAttempts}/5 lần. Sau 5 lần sai, tài khoản sẽ bị khóa 5 phút.",
-        //            failedAttempts = user.FailedLoginAttempts
-        //        });
-        //    }
-
-        //    // Reset failed attempts after a successful login
-        //    user.FailedLoginAttempts = 0;
-        //    user.LockoutEnd = null;
-        //    await _userManager.UpdateAsync(user);
-
-        //    var tokenValue = await GenerateJWTToken(user);
-        //    return Ok(new { token = tokenValue });
-        //}
-
 
         [HttpPost("forgot-password")]
         [AllowAnonymous]
@@ -277,15 +207,13 @@ namespace SportStore.WebApi.Controllers
         {
             if (!ModelState.IsValid)
             {
-                Console.WriteLine("ModelState không hợp lệ");
                 return BadRequest(ModelState);
             }
 
             var user = await _userManager.FindByEmailAsync(resetPasswordVm.Email);
             if (user == null)
             {
-                Console.WriteLine("Không tìm thấy người dùng");
-                return BadRequest("Yêu cầu không hợp lệ.");
+                return BadRequest(new { message = "Yêu cầu không hợp lệ." });
             }
 
             var decodedToken = Uri.UnescapeDataString(resetPasswordVm.Token);
@@ -295,11 +223,10 @@ namespace SportStore.WebApi.Controllers
             if (!resetPassResult.Succeeded)
             {
                 var errors = resetPassResult.Errors.Select(e => e.Description);
-                return BadRequest(new { Errors = errors });
+                return BadRequest(new { message = "Validation failed", errors });
             }
 
-            Console.WriteLine("Đã đặt lại mật khẩu thành công");
-            return Ok("Mật khẩu đã được đặt lại thành công.");
+            return Ok(new { message = "Mật khẩu đã được đặt lại thành công." });
         }
 
         private async Task<AuthResultVm> GenerateJWTToken(AppUser user)

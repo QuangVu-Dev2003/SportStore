@@ -71,6 +71,17 @@ namespace SportStore.WebApi.Controllers.Admin
                 return BadRequest(ModelState);
             }
 
+            // Kiểm tra nếu price hoặc instock bằng 0
+            if (productVm.Price == 0)
+            {
+                return BadRequest(new { message = "Giá sản phẩm không thể bằng 0." });
+            }
+
+            if (productVm.Instock == 0)
+            {
+                return BadRequest(new { message = "Số lượng sản phẩm không thể bằng 0." });
+            }
+
             try
             {
                 var updated = await _productService.UpdateProductAsync(id, productVm);
@@ -91,6 +102,7 @@ namespace SportStore.WebApi.Controllers.Admin
                 });
             }
         }
+
 
         [HttpDelete("delete/{id}")]
         [Authorize(Roles = "Admin")]

@@ -44,12 +44,22 @@ namespace SportStore.BusinessLogicLayer.Services
 
         public async Task<ProductVm> CreateProductAsync(ProductVm productVm)
         {
+            // Kiểm tra tên sản phẩm đã tồn tại
+            var existingProduct = await _unitOfWork.ProductRepository
+                .FindAsync(p => p.ProductName == productVm.ProductName);
+            if (existingProduct.Any())
+            {
+                throw new Exception($"Tên sản phẩm '{productVm.ProductName}' đã tồn tại. Vui lòng chọn tên khác.");
+            }
+
+            // Kiểm tra thương hiệu
             var brand = (await _unitOfWork.BrandRepository.FindAsync(b => b.BrandName == productVm.BrandName)).FirstOrDefault();
             if (brand == null)
             {
                 throw new Exception($"Thương hiệu '{productVm.BrandName}' không tồn tại.");
             }
 
+            // Lấy danh sách danh mục
             var categoryIds = new List<Guid>();
             foreach (var categoryName in productVm.CategoryNames)
             {
@@ -61,6 +71,7 @@ namespace SportStore.BusinessLogicLayer.Services
                 categoryIds.Add(category.CategoryId);
             }
 
+            // Tạo đối tượng ProductModel
             var product = new ProductModel
             {
                 ProductId = Guid.NewGuid(),
@@ -75,6 +86,7 @@ namespace SportStore.BusinessLogicLayer.Services
                 ProductCategoryModels = categoryIds.Select(id => new ProductCategoryModel { CategoryId = id }).ToList()
             };
 
+            // Lưu ảnh nếu có
             if (productVm.ImageFiles != null && productVm.ImageFiles.Any())
             {
                 product.Images = new List<string>();
@@ -84,13 +96,16 @@ namespace SportStore.BusinessLogicLayer.Services
                 }
             }
 
+            // Thêm sản phẩm vào cơ sở dữ liệu
             await _unitOfWork.ProductRepository.AddAsync(product);
             await _unitOfWork.SaveChangesAsync();
             return MapToViewModel(product);
         }
 
+
         public async Task<bool> UpdateProductAsync(Guid productId, ProductVm productVm)
         {
+            // Lấy sản phẩm cần cập nhật
             var product = await _unitOfWork.ProductRepository
                 .GetDbSet()
                 .Include(p => p.Brand)
@@ -100,6 +115,15 @@ namespace SportStore.BusinessLogicLayer.Services
 
             if (product == null) return false;
 
+            // Kiểm tra xem tên sản phẩm có bị trùng với sản phẩm khác
+            var existingProduct = await _unitOfWork.ProductRepository
+                .FindAsync(p => p.ProductName == productVm.ProductName && p.ProductId != productId);
+            if (existingProduct.Any())
+            {
+                throw new Exception($"Tên sản phẩm '{productVm.ProductName}' đã tồn tại. Vui lòng chọn tên khác.");
+            }
+
+            // Kiểm tra thương hiệu
             var brand = (await _unitOfWork.BrandRepository.FindAsync(b => b.BrandName == productVm.BrandName)).FirstOrDefault();
             if (brand == null)
             {
@@ -107,6 +131,7 @@ namespace SportStore.BusinessLogicLayer.Services
             }
             product.BrandId = brand.BrandId;
 
+            // Cập nhật danh mục nếu có
             if (productVm.CategoryNames != null && productVm.CategoryNames.Any())
             {
                 product.ProductCategoryModels.Clear();
@@ -127,6 +152,7 @@ namespace SportStore.BusinessLogicLayer.Services
                 }
             }
 
+            // Cập nhật các thông tin khác
             product.ProductName = productVm.ProductName;
             product.Description = productVm.Description;
             product.Detail = productVm.Detail;
@@ -134,6 +160,7 @@ namespace SportStore.BusinessLogicLayer.Services
             product.Instock = productVm.Instock;
             product.Status = (ProductStatus)productVm.Status;
 
+            // Cập nhật ảnh nếu có
             if (productVm.ImageFiles != null && productVm.ImageFiles.Any())
             {
                 if (product.Images != null && product.Images.Any())
@@ -151,11 +178,13 @@ namespace SportStore.BusinessLogicLayer.Services
                 }
             }
 
+            // Cập nhật vào cơ sở dữ liệu
             _unitOfWork.ProductRepository.Update(product);
             await _unitOfWork.SaveChangesAsync();
 
             return true;
         }
+
 
         public async Task<bool> DeleteProductAsync(Guid productId)
         {

@@ -2,7 +2,7 @@
 {
     public class OrderVm
     {
-        public Guid OrderId { get; set; }
+        public Guid? OrderId { get; set; }
         public string UserId { get; set; }
         public DateTime OrderDate { get; set; }
         public string ShippingAddress { get; set; }
@@ -17,5 +17,6 @@
         public string ProductName { get; set; }
         public int Quantity { get; set; }
         public decimal UnitPrice { get; set; }
+        public string Status { get; set; } = "Pending";
     }
 }

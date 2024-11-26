@@ -318,3 +318,6 @@ C:\Users\vunuo\OneDrive\Máy tính\projecttttt\SportStore\API\SportStore\SportSt
 C:\Users\vunuo\OneDrive\Máy tính\projecttttt\SportStore\API\SportStore\SportStore.WebApi\obj\Debug\net8.0\SportStore.WebApi.genruntimeconfig.cache
 C:\Users\vunuo\OneDrive\Máy tính\projecttttt\SportStore\API\SportStore\SportStore.WebApi\obj\Debug\net8.0\ref\SportStore.WebApi.dll
 C:\Users\vunuo\OneDrive\Máy tính\projecttttt\SportStore\API\SportStore\SportStore.WebApi\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\vunuo\OneDrive\Máy tính\projecttttt\SportStore\API\SportStore\SportStore.WebApi\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\vunuo\OneDrive\Máy tính\projecttttt\SportStore\API\SportStore\SportStore.WebApi\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\vunuo\OneDrive\Máy tính\projecttttt\SportStore\API\SportStore\SportStore.WebApi\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll

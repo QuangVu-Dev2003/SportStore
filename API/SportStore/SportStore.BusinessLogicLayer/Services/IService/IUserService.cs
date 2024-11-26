@@ -20,5 +20,7 @@ namespace SportStore.BusinessLogicLayer.Services.IService
         Task LockUserAsync(string userId);
         Task UnlockUserAsync(string userId);
         Task AssignRoleToUserAsync(string userId, string roleName);
+        Task<IEnumerable<string>> GetUserRolesAsync(string userId);
+        Task<bool> ValidateUserCredentialsAsync(string username, string password);
     }
 }

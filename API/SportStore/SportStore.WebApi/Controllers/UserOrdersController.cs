@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using SportStore.BusinessLogicLayer.Services.IService;
 using SportStore.BusinessLogicLayer.ViewModels;
 using System.Security.Claims;
+using Newtonsoft.Json;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace SportStore.WebApi.Controllers
 {
@@ -27,13 +29,31 @@ namespace SportStore.WebApi.Controllers
                 return Unauthorized("Người dùng chưa được xác thực.");
             }
 
-            var order = await _orderService.GetOrderByIdAsync(orderId, userId);
-            if (order == null)
+            try
             {
-                return NotFound($"Không tìm thấy đơn hàng có ID {orderId} hoặc đơn hàng đó không thuộc về người dùng.");
-            }
+                var order = await _orderService.GetOrderByIdAsync(orderId, userId);
+                var orderVm = new OrderVm
+                {
+                    OrderId = order.OrderId,
+                    OrderDate = order.OrderDate,
+                    ShippingAddress = order.ShippingAddress,
+                    TotalAmount = order.TotalAmount,
+                    Status = order.Status.ToString(),
+                    OrderDetails = order.OrderDetails.Select(od => new OrderDetailVm
+                    {
+                        ProductId = od.ProductId,
+                        ProductName = od.Product?.ProductName,
+                        Quantity = od.Quantity,
+                        UnitPrice = od.Product?.Price ?? 0
+                    }).ToList()
+                };
 
-            return Ok(order);
+                return Ok(orderVm);
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
         }
 
         [HttpPut("{orderId}/cancel")]
@@ -42,7 +62,7 @@ namespace SportStore.WebApi.Controllers
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             if (string.IsNullOrEmpty(userId))
             {
-                return Unauthorized("Người dùng chưa được xác thực.");
+                return Unauthorized(new { message = "Người dùng chưa được xác thực." });
             }
 
             try
@@ -50,29 +70,36 @@ namespace SportStore.WebApi.Controllers
                 var canCancel = await _orderService.CanCancelOrderAsync(orderId, userId);
                 if (!canCancel)
                 {
-                    return BadRequest("Không thể hủy đơn hàng.");
+                    return BadRequest(new { message = "Không thể hủy đơn hàng." });
                 }
 
-                await _orderService.CancelOrderAsync(orderId, userId);
-                return NoContent();
+                var success = await _orderService.CancelOrderAsync(orderId, userId);
+                if (success)
+                {
+                    return Ok(new { message = "Hủy đơn hàng thành công.", status = "Cancelled" });
+                }
+
+                return BadRequest(new { message = "Không thể hủy đơn hàng." });
             }
             catch (KeyNotFoundException ex)
             {
-                return NotFound(ex.Message);
-            }
-            catch (InvalidOperationException ex)
-            {
-                return BadRequest(ex.Message);
+                return NotFound(new { error = ex.Message });
             }
             catch (Exception ex)
             {
-                return StatusCode(StatusCodes.Status500InternalServerError, "Đã xảy ra lỗi không mong muốn.");
+                return StatusCode(StatusCodes.Status500InternalServerError, new { error = "Đã xảy ra lỗi không mong muốn.", details = ex.Message });
             }
         }
 
         [HttpPost("checkout")]
-        public async Task<ActionResult<OrderVm>> PlaceOrder(OrderVm orderVm)
+        public async Task<ActionResult<OrderVm>> PlaceOrder([FromBody] OrderVm orderVm)
         {
+            if (orderVm == null || orderVm.OrderDetails == null || !orderVm.OrderDetails.Any())
+            {
+                Console.WriteLine("Dữ liệu nhận được không hợp lệ: " + JsonConvert.SerializeObject(orderVm));
+                return BadRequest("Dữ liệu không hợp lệ hoặc thiếu thông tin đơn hàng.");
+            }
+
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             if (string.IsNullOrEmpty(userId))
             {
@@ -86,6 +113,7 @@ namespace SportStore.WebApi.Controllers
             }
             catch (Exception ex)
             {
+                Console.WriteLine("Lỗi khi xử lý đơn hàng: " + ex.Message);
                 return StatusCode(StatusCodes.Status500InternalServerError, "Đã xảy ra lỗi không mong muốn khi đặt hàng.");
             }
         }

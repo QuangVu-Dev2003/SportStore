@@ -157,6 +157,38 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "SportStore.WebApi.Controllers.Admin.AdminUserController",
+    "Method": "GetUserRoles",
+    "RelativePath": "api/AdminUser/get-user-roles/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SportStore.WebApi.Controllers.Admin.AdminUserController",
+    "Method": "ReAuthenticate",
+    "RelativePath": "api/AdminUser/re-authenticate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reAuthenticateVm",
+        "Type": "SportStore.BusinessLogicLayer.ViewModels.ReAuthenticateVm",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "SportStore.WebApi.Controllers.AuthenticationController",
     "Method": "ConfirmEmail",
     "RelativePath": "api/Authentication/confirm-email",

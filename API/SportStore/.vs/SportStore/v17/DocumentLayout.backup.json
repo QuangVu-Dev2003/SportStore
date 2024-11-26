@@ -3,48 +3,96 @@
   "WorkspaceRootPath": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\projecttttt\\sportstore\\api\\sportstore\\sportstore.webapi\\controllers\\admin\\brandscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|solutionrelative:sportstore.webapi\\controllers\\admin\\brandscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{80805E61-A2A4-4377-BF4E-3AE494819BB7}|SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\projecttttt\\sportstore\\api\\sportstore\\sportstore.dataaccesslayer\\repositories\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80805E61-A2A4-4377-BF4E-3AE494819BB7}|SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj|solutionrelative:sportstore.dataaccesslayer\\repositories\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{80805E61-A2A4-4377-BF4E-3AE494819BB7}|SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\projecttttt\\sportstore\\api\\sportstore\\sportstore.dataaccesslayer\\repositories\\irepository\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80805E61-A2A4-4377-BF4E-3AE494819BB7}|SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj|solutionrelative:sportstore.dataaccesslayer\\repositories\\irepository\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{80805E61-A2A4-4377-BF4E-3AE494819BB7}|SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\projecttttt\\sportstore\\api\\sportstore\\sportstore.dataaccesslayer\\repositories\\irepository\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80805E61-A2A4-4377-BF4E-3AE494819BB7}|SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj|solutionrelative:sportstore.dataaccesslayer\\repositories\\irepository\\icategoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{80805E61-A2A4-4377-BF4E-3AE494819BB7}|SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\projecttttt\\sportstore\\api\\sportstore\\sportstore.dataaccesslayer\\repositories\\cartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{80805E61-A2A4-4377-BF4E-3AE494819BB7}|SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj|solutionrelative:sportstore.dataaccesslayer\\repositories\\cartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\projecttttt\\sportstore\\api\\sportstore\\sportstore.webapi\\controllers\\admin\\adminusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|solutionrelative:sportstore.webapi\\controllers\\admin\\adminusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\projecttttt\\sportstore\\api\\sportstore\\sportstore.webapi\\controllers\\admin\\adminorderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|solutionrelative:sportstore.webapi\\controllers\\admin\\adminorderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\projecttttt\\sportstore\\api\\sportstore\\sportstore.webapi\\controllers\\cartscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|solutionrelative:sportstore.webapi\\controllers\\cartscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\projecttttt\\sportstore\\api\\sportstore\\sportstore.webapi\\controllers\\admin\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|solutionrelative:sportstore.webapi\\controllers\\admin\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\projecttttt\\sportstore\\api\\sportstore\\sportstore.webapi\\controllers\\admin\\adminusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|solutionrelative:sportstore.webapi\\controllers\\admin\\adminusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\projecttttt\\sportstore\\api\\sportstore\\sportstore.webapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|solutionrelative:sportstore.webapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\projecttttt\\sportstore\\api\\sportstore\\sportstore.webapi\\controllers\\userorderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|solutionrelative:sportstore.webapi\\controllers\\userorderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\projecttttt\\sportstore\\api\\sportstore\\sportstore.webapi\\controllers\\admin\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|solutionrelative:sportstore.webapi\\controllers\\admin\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\projecttttt\\sportstore\\api\\sportstore\\sportstore.webapi\\controllers\\admin\\brandscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|solutionrelative:sportstore.webapi\\controllers\\admin\\brandscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\projecttttt\\sportstore\\api\\sportstore\\sportstore.webapi\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|solutionrelative:sportstore.webapi\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{DFE67F3D-FEBE-4DBC-88C2-D82271252CD4}|SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\projecttttt\\sportstore\\api\\sportstore\\sportstore.businesslogiclayer\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE67F3D-FEBE-4DBC-88C2-D82271252CD4}|SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj|solutionrelative:sportstore.businesslogiclayer\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE67F3D-FEBE-4DBC-88C2-D82271252CD4}|SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\projecttttt\\sportstore\\api\\sportstore\\sportstore.businesslogiclayer\\services\\iservice\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE67F3D-FEBE-4DBC-88C2-D82271252CD4}|SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj|solutionrelative:sportstore.businesslogiclayer\\services\\iservice\\iproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80805E61-A2A4-4377-BF4E-3AE494819BB7}|SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\projecttttt\\sportstore\\api\\sportstore\\sportstore.dataaccesslayer\\models\\orderdetailmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80805E61-A2A4-4377-BF4E-3AE494819BB7}|SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj|solutionrelative:sportstore.dataaccesslayer\\models\\orderdetailmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE67F3D-FEBE-4DBC-88C2-D82271252CD4}|SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\projecttttt\\sportstore\\api\\sportstore\\sportstore.businesslogiclayer\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE67F3D-FEBE-4DBC-88C2-D82271252CD4}|SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj|solutionrelative:sportstore.businesslogiclayer\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE67F3D-FEBE-4DBC-88C2-D82271252CD4}|SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\projecttttt\\sportstore\\api\\sportstore\\sportstore.businesslogiclayer\\services\\userorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE67F3D-FEBE-4DBC-88C2-D82271252CD4}|SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj|solutionrelative:sportstore.businesslogiclayer\\services\\userorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE67F3D-FEBE-4DBC-88C2-D82271252CD4}|SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\projecttttt\\sportstore\\api\\sportstore\\sportstore.businesslogiclayer\\viewmodels\\ordervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE67F3D-FEBE-4DBC-88C2-D82271252CD4}|SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj|solutionrelative:sportstore.businesslogiclayer\\viewmodels\\ordervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE67F3D-FEBE-4DBC-88C2-D82271252CD4}|SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\projecttttt\\sportstore\\api\\sportstore\\sportstore.businesslogiclayer\\services\\iservice\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE67F3D-FEBE-4DBC-88C2-D82271252CD4}|SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj|solutionrelative:sportstore.businesslogiclayer\\services\\iservice\\iorderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80805E61-A2A4-4377-BF4E-3AE494819BB7}|SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\projecttttt\\sportstore\\api\\sportstore\\sportstore.dataaccesslayer\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80805E61-A2A4-4377-BF4E-3AE494819BB7}|SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj|solutionrelative:sportstore.dataaccesslayer\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80805E61-A2A4-4377-BF4E-3AE494819BB7}|SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\projecttttt\\sportstore\\api\\sportstore\\sportstore.dataaccesslayer\\models\\ordermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80805E61-A2A4-4377-BF4E-3AE494819BB7}|SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj|solutionrelative:sportstore.dataaccesslayer\\models\\ordermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{80805E61-A2A4-4377-BF4E-3AE494819BB7}|SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\projecttttt\\sportstore\\api\\sportstore\\sportstore.dataaccesslayer\\repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{80805E61-A2A4-4377-BF4E-3AE494819BB7}|SportStore.DataAccessLayer\\SportStore.DataAccessLayer.csproj|solutionrelative:sportstore.dataaccesslayer\\repositories\\orderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\projecttttt\\sportstore\\api\\sportstore\\sportstore.webapi\\sportstore.webapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|solutionrelative:sportstore.webapi\\sportstore.webapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\projecttttt\\sportstore\\api\\sportstore\\sportstore.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|solutionrelative:sportstore.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\projecttttt\\sportstore\\api\\sportstore\\sportstore.webapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B72235F9-DD86-46E6-B0E0-2DAD7D3A83A5}|SportStore.WebApi\\SportStore.WebApi.csproj|solutionrelative:sportstore.webapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DFE67F3D-FEBE-4DBC-88C2-D82271252CD4}|SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\projecttttt\\sportstore\\api\\sportstore\\sportstore.businesslogiclayer\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE67F3D-FEBE-4DBC-88C2-D82271252CD4}|SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj|solutionrelative:sportstore.businesslogiclayer\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE67F3D-FEBE-4DBC-88C2-D82271252CD4}|SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\projecttttt\\sportstore\\api\\sportstore\\sportstore.businesslogiclayer\\viewmodels\\reauthenticatevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE67F3D-FEBE-4DBC-88C2-D82271252CD4}|SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj|solutionrelative:sportstore.businesslogiclayer\\viewmodels\\reauthenticatevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE67F3D-FEBE-4DBC-88C2-D82271252CD4}|SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj|c:\\users\\vunuo\\onedrive\\m\u00E1y t\u00EDnh\\projecttttt\\sportstore\\api\\sportstore\\sportstore.businesslogiclayer\\services\\iservice\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE67F3D-FEBE-4DBC-88C2-D82271252CD4}|SportStore.BusinessLogicLayer\\SportStore.BusinessLogicLayer.csproj|solutionrelative:sportstore.businesslogiclayer\\services\\iservice\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,148 +102,284 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 19,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "BrandsController.cs",
               "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\Controllers\\Admin\\BrandsController.cs",
               "RelativeDocumentMoniker": "SportStore.WebApi\\Controllers\\Admin\\BrandsController.cs",
               "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\Controllers\\Admin\\BrandsController.cs",
               "RelativeToolTip": "SportStore.WebApi\\Controllers\\Admin\\BrandsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T07:35:53.966Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IGenericRepository.cs",
-              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.DataAccessLayer\\Repositories\\IRepository\\IGenericRepository.cs",
-              "RelativeDocumentMoniker": "SportStore.DataAccessLayer\\Repositories\\IRepository\\IGenericRepository.cs",
-              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.DataAccessLayer\\Repositories\\IRepository\\IGenericRepository.cs",
-              "RelativeToolTip": "SportStore.DataAccessLayer\\Repositories\\IRepository\\IGenericRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T07:27:18.88Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ICategoryRepository.cs",
-              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.DataAccessLayer\\Repositories\\IRepository\\ICategoryRepository.cs",
-              "RelativeDocumentMoniker": "SportStore.DataAccessLayer\\Repositories\\IRepository\\ICategoryRepository.cs",
-              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.DataAccessLayer\\Repositories\\IRepository\\ICategoryRepository.cs",
-              "RelativeToolTip": "SportStore.DataAccessLayer\\Repositories\\IRepository\\ICategoryRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T07:27:02.813Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CartRepository.cs",
-              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.DataAccessLayer\\Repositories\\CartRepository.cs",
-              "RelativeDocumentMoniker": "SportStore.DataAccessLayer\\Repositories\\CartRepository.cs",
-              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.DataAccessLayer\\Repositories\\CartRepository.cs",
-              "RelativeToolTip": "SportStore.DataAccessLayer\\Repositories\\CartRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T07:26:59.888Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AdminUserController.cs",
-              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\Controllers\\Admin\\AdminUserController.cs",
-              "RelativeDocumentMoniker": "SportStore.WebApi\\Controllers\\Admin\\AdminUserController.cs",
-              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\Controllers\\Admin\\AdminUserController.cs",
-              "RelativeToolTip": "SportStore.WebApi\\Controllers\\Admin\\AdminUserController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T07:26:30.307Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CategoryRepository.cs",
-              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.DataAccessLayer\\Repositories\\CategoryRepository.cs",
-              "RelativeDocumentMoniker": "SportStore.DataAccessLayer\\Repositories\\CategoryRepository.cs",
-              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.DataAccessLayer\\Repositories\\CategoryRepository.cs",
-              "RelativeToolTip": "SportStore.DataAccessLayer\\Repositories\\CategoryRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T07:19:43.338Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-26T14:59:20.394Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "CategoriesController.cs",
-              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\Controllers\\Admin\\CategoriesController.cs",
-              "RelativeDocumentMoniker": "SportStore.WebApi\\Controllers\\Admin\\CategoriesController.cs",
-              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\Controllers\\Admin\\CategoriesController.cs",
-              "RelativeToolTip": "SportStore.WebApi\\Controllers\\Admin\\CategoriesController.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAADoAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T07:06:30.63Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\Program.cs",
-              "RelativeDocumentMoniker": "SportStore.WebApi\\Program.cs",
-              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\Program.cs",
-              "RelativeToolTip": "SportStore.WebApi\\Program.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAA0AAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T02:25:26.38Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "SportStore.WebApi\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\Controllers\\UserController.cs",
-              "RelativeToolTip": "SportStore.WebApi\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABUAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T02:05:04.588Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CartsController.cs",
-              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\Controllers\\CartsController.cs",
-              "RelativeDocumentMoniker": "SportStore.WebApi\\Controllers\\CartsController.cs",
-              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\Controllers\\CartsController.cs",
-              "RelativeToolTip": "SportStore.WebApi\\Controllers\\CartsController.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T02:05:00.617Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "AuthenticationController.cs",
               "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\Controllers\\AuthenticationController.cs",
               "RelativeDocumentMoniker": "SportStore.WebApi\\Controllers\\AuthenticationController.cs",
               "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\Controllers\\AuthenticationController.cs",
               "RelativeToolTip": "SportStore.WebApi\\Controllers\\AuthenticationController.cs",
-              "ViewState": "AgIAAGcAAAAAAAAAAAAAAHkAAABOAAAAAAAAAA==",
+              "ViewState": "AgIAALwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-24T15:52:54.602Z",
+              "WhenOpened": "2024-11-26T14:22:52.552Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CartsController.cs",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\Controllers\\CartsController.cs",
+              "RelativeDocumentMoniker": "SportStore.WebApi\\Controllers\\CartsController.cs",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\Controllers\\CartsController.cs",
+              "RelativeToolTip": "SportStore.WebApi\\Controllers\\CartsController.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T14:22:51.673Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.BusinessLogicLayer\\Services\\ProductService.cs",
+              "RelativeDocumentMoniker": "SportStore.BusinessLogicLayer\\Services\\ProductService.cs",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.BusinessLogicLayer\\Services\\ProductService.cs",
+              "RelativeToolTip": "SportStore.BusinessLogicLayer\\Services\\ProductService.cs",
+              "ViewState": "AgIAAA4BAAAAAAAAAAAqwC8BAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T08:15:07.54Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\Controllers\\Admin\\ProductsController.cs",
+              "RelativeDocumentMoniker": "SportStore.WebApi\\Controllers\\Admin\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\Controllers\\Admin\\ProductsController.cs",
+              "RelativeToolTip": "SportStore.WebApi\\Controllers\\Admin\\ProductsController.cs",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAAAKAAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T08:13:59.465Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IProductService.cs",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.BusinessLogicLayer\\Services\\IService\\IProductService.cs",
+              "RelativeDocumentMoniker": "SportStore.BusinessLogicLayer\\Services\\IService\\IProductService.cs",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.BusinessLogicLayer\\Services\\IService\\IProductService.cs",
+              "RelativeToolTip": "SportStore.BusinessLogicLayer\\Services\\IService\\IProductService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T08:09:59.499Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "OrderDetailModel.cs",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.DataAccessLayer\\Models\\OrderDetailModel.cs",
+              "RelativeDocumentMoniker": "SportStore.DataAccessLayer\\Models\\OrderDetailModel.cs",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.DataAccessLayer\\Models\\OrderDetailModel.cs",
+              "RelativeToolTip": "SportStore.DataAccessLayer\\Models\\OrderDetailModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T07:44:24.696Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "OrderModel.cs",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.DataAccessLayer\\Models\\OrderModel.cs",
+              "RelativeDocumentMoniker": "SportStore.DataAccessLayer\\Models\\OrderModel.cs",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.DataAccessLayer\\Models\\OrderModel.cs",
+              "RelativeToolTip": "SportStore.DataAccessLayer\\Models\\OrderModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T07:03:08.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "IOrderService.cs",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.BusinessLogicLayer\\Services\\IService\\IOrderService.cs",
+              "RelativeDocumentMoniker": "SportStore.BusinessLogicLayer\\Services\\IService\\IOrderService.cs",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.BusinessLogicLayer\\Services\\IService\\IOrderService.cs",
+              "RelativeToolTip": "SportStore.BusinessLogicLayer\\Services\\IService\\IOrderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T06:55:10.982Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "OrderRepository.cs",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.DataAccessLayer\\Repositories\\OrderRepository.cs",
+              "RelativeDocumentMoniker": "SportStore.DataAccessLayer\\Repositories\\OrderRepository.cs",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.DataAccessLayer\\Repositories\\OrderRepository.cs",
+              "RelativeToolTip": "SportStore.DataAccessLayer\\Repositories\\OrderRepository.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAqwCoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T06:51:34.379Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "SportStore.WebApi.csproj",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\SportStore.WebApi.csproj",
+              "RelativeDocumentMoniker": "SportStore.WebApi\\SportStore.WebApi.csproj",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\SportStore.WebApi.csproj",
+              "RelativeToolTip": "SportStore.WebApi\\SportStore.WebApi.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-11-26T05:58:52.972Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\Program.cs",
+              "RelativeDocumentMoniker": "SportStore.WebApi\\Program.cs",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\Program.cs",
+              "RelativeToolTip": "SportStore.WebApi\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T05:57:28.83Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "OrderVm.cs",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.BusinessLogicLayer\\ViewModels\\OrderVm.cs",
+              "RelativeDocumentMoniker": "SportStore.BusinessLogicLayer\\ViewModels\\OrderVm.cs",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.BusinessLogicLayer\\ViewModels\\OrderVm.cs",
+              "RelativeToolTip": "SportStore.BusinessLogicLayer\\ViewModels\\OrderVm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T05:40:06.817Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.BusinessLogicLayer\\Services\\OrderService.cs",
+              "RelativeDocumentMoniker": "SportStore.BusinessLogicLayer\\Services\\OrderService.cs",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.BusinessLogicLayer\\Services\\OrderService.cs",
+              "RelativeToolTip": "SportStore.BusinessLogicLayer\\Services\\OrderService.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAHUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T05:20:27.238Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UserOrderService.cs",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.BusinessLogicLayer\\Services\\UserOrderService.cs",
+              "RelativeDocumentMoniker": "SportStore.BusinessLogicLayer\\Services\\UserOrderService.cs",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.BusinessLogicLayer\\Services\\UserOrderService.cs",
+              "RelativeToolTip": "SportStore.BusinessLogicLayer\\Services\\UserOrderService.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAADAAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T05:20:12.571Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserOrdersController.cs",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\Controllers\\UserOrdersController.cs",
+              "RelativeDocumentMoniker": "SportStore.WebApi\\Controllers\\UserOrdersController.cs",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\Controllers\\UserOrdersController.cs",
+              "RelativeToolTip": "SportStore.WebApi\\Controllers\\UserOrdersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T05:16:13.482Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "SportStore.WebApi\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\Controllers\\UserController.cs",
+              "RelativeToolTip": "SportStore.WebApi\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAIcAAAAAAAAAAAAAAJkAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T05:16:01.438Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ReAuthenticateVm.cs",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.BusinessLogicLayer\\ViewModels\\ReAuthenticateVm.cs",
+              "RelativeDocumentMoniker": "SportStore.BusinessLogicLayer\\ViewModels\\ReAuthenticateVm.cs",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.BusinessLogicLayer\\ViewModels\\ReAuthenticateVm.cs",
+              "RelativeToolTip": "SportStore.BusinessLogicLayer\\ViewModels\\ReAuthenticateVm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-26T02:54:07.885Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.BusinessLogicLayer\\Services\\IService\\IUserService.cs",
+              "RelativeDocumentMoniker": "SportStore.BusinessLogicLayer\\Services\\IService\\IUserService.cs",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.BusinessLogicLayer\\Services\\IService\\IUserService.cs",
+              "RelativeToolTip": "SportStore.BusinessLogicLayer\\Services\\IService\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T17:25:29.517Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminOrdersController.cs",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\Controllers\\Admin\\AdminOrdersController.cs",
+              "RelativeDocumentMoniker": "SportStore.WebApi\\Controllers\\Admin\\AdminOrdersController.cs",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\Controllers\\Admin\\AdminOrdersController.cs",
+              "RelativeToolTip": "SportStore.WebApi\\Controllers\\Admin\\AdminOrdersController.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAABsAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T17:24:58.307Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.BusinessLogicLayer\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "SportStore.BusinessLogicLayer\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.BusinessLogicLayer\\Services\\UserService.cs",
+              "RelativeToolTip": "SportStore.BusinessLogicLayer\\Services\\UserService.cs",
+              "ViewState": "AgIAAKwAAAAAAAAAAAAqwM0AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T17:23:07.496Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AdminUserController.cs",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\Controllers\\Admin\\AdminUserController.cs",
+              "RelativeDocumentMoniker": "SportStore.WebApi\\Controllers\\Admin\\AdminUserController.cs",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.WebApi\\Controllers\\Admin\\AdminUserController.cs",
+              "RelativeToolTip": "SportStore.WebApi\\Controllers\\Admin\\AdminUserController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAAIAAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T17:20:55.46Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AppUser.cs",
+              "DocumentMoniker": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.DataAccessLayer\\Models\\AppUser.cs",
+              "RelativeDocumentMoniker": "SportStore.DataAccessLayer\\Models\\AppUser.cs",
+              "ToolTip": "C:\\Users\\vunuo\\OneDrive\\M\u00E1y t\u00EDnh\\projecttttt\\SportStore\\API\\SportStore\\SportStore.DataAccessLayer\\Models\\AppUser.cs",
+              "RelativeToolTip": "SportStore.DataAccessLayer\\Models\\AppUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T17:18:31.279Z"
             }
           ]
         }

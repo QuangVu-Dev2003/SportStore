@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SportStore.BusinessLogicLayer.Services.IService;
+using SportStore.BusinessLogicLayer.ViewModels;
 using SportStore.WebApi.ViewModels;
 
 namespace SportStore.WebApi.Controllers.Admin
@@ -103,11 +104,51 @@ namespace SportStore.WebApi.Controllers.Admin
             try
             {
                 await _userService.AssignRoleToUserAsync(roleAssignment.UserId, roleAssignment.RoleName);
-                return Ok($"Đăng ký quyền cho {roleAssignment.UserId} thành công.");
+                return Ok(new { message = $"Đăng ký quyền cho {roleAssignment.UserId} thành công." });
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet("get-user-roles/{id}")]
+        public async Task<IActionResult> GetUserRoles(string id)
+        {
+            try
+            {
+                var roles = await _userService.GetUserRolesAsync(id);
+                return Ok(roles);
+            }
+            catch (Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+
+        [HttpPost("re-authenticate")]
+        [AllowAnonymous]
+        public async Task<IActionResult> ReAuthenticate([FromBody] ReAuthenticateVm reAuthenticateVm)
+        {
+            try
+            {
+                var user = await _userService.GetCurrentUserAsync();
+                if (user == null)
+                {
+                    return Unauthorized("Người dùng không tồn tại.");
+                }
+
+                var result = await _userService.ValidateUserCredentialsAsync(user.UserName, reAuthenticateVm.Password);
+                if (!result)
+                {
+                    return Unauthorized("Mật khẩu không chính xác.");
+                }
+
+                return Ok(new { success = true, message = "Xác thực thành công." });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { success = false, message = ex.Message });
             }
         }
     }
